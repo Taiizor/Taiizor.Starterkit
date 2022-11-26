@@ -1,6 +1,6 @@
 {
     "Vegalya": {
-        "Domain": "https://www.vegalya.com",
+        "Domain": "https://www.vegalya.com/",
         "ThemeName": "Vegalya Theme",
         "LocaleSwitchEnabled": true,
         "ModeSwitchEnabled": true,
@@ -18,7 +18,7 @@
             "CookieName": "Factorial",
             "UnknownName": "Unknown",
             "UnknownLang": "xy-XY",
-            "CookieExpires": 90,
+            "CookieExpires": 30,
             "ActiveLang": [
                 "en-GB"
             ],

@@ -3,7 +3,7 @@ using Starterkit.Interface;
 
 namespace Starterkit.Extension
 {
-    class ThemeHelpers : IThemeHelpers
+    public class ThemeHelpers : IThemeHelpers
     {
         private readonly IJSRuntime _js;
 
