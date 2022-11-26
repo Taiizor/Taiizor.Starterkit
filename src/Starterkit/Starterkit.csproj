@@ -13,16 +13,16 @@
 
     <PropertyGroup>
         <ApplicationIcon>Resources\Starterkit.ico</ApplicationIcon>
-        <Version>1.0.0.1</Version>
+        <Version>1.0.0.4</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Starterkit</Title>
         <PackageId>Taiizor.Starterkit</PackageId>
         <Authors>Taiizor</Authors>
         <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
-        <Summary>Best with more than 350 WinForms components.</Summary>
+        <Summary>Starterkit library for projects using .NET Blazor</Summary>
         <Description>$(Summary)
-.NET WinForms UI/UX Component Library - $(PackageId)
+.NET Blazor Starterkit Library - $(PackageId)
         </Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageLicenseExpression></PackageLicenseExpression>
@@ -51,10 +51,6 @@ Changes are detailed at https://github.com/Taiizor/Starterkit/releases
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <Configurations>Debug;Release</Configurations>
         <NoWarn>1587,1591</NoWarn>
-    </PropertyGroup>
-
-    <PropertyGroup>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>

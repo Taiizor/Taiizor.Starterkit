@@ -10,7 +10,7 @@
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
 # Welcome to Starterkit
-Starterkit is a essentials library for projects using .NET MAUI. It provides convenience with various functions it offers.
+Taiizor.Starterkit is a starterkit library for projects using .NET Blazor. It provides convenience with various functions it offers.
 
 ## Contributors
 
