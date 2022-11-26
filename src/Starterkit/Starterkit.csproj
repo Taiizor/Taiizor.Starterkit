@@ -13,7 +13,7 @@
 
     <PropertyGroup>
         <ApplicationIcon>Resources\Starterkit.ico</ApplicationIcon>
-        <Version>1.0.0.7</Version>
+        <Version>1.0.0.8</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Starterkit</Title>
@@ -80,7 +80,7 @@ Changes are detailed at https://github.com/Taiizor/Starterkit/releases
     </ItemGroup>
 
     <ItemGroup>
-      <Content Update="FactorySettings.json">
+      <Content Update="Resources\FactorySettings.json">
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
     </ItemGroup>
