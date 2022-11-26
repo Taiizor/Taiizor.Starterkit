@@ -9,7 +9,7 @@
 
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
-# Bienvenido a Taiizor.Starterkit
+# Bienvenido a Starterkit
 Starterkit es una biblioteca de kit de inicio para proyectos que utilizan .NET Blazor. Proporciona comodidad con varias funciones que ofrece.
 
 ## Colaboradores
