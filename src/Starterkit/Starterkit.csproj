@@ -30,7 +30,7 @@
         <PackageReleaseNotes>Major changes have been made.
 Changes are detailed at https://github.com/Taiizor/Starterkit/releases
         </PackageReleaseNotes>
-        <PackageTags>ReaL Taiizor Soferity Vegalya Starterkit C# CSharp VBC VB VisualBasic DotNET .NET NET Kit Library Blazor Razor</PackageTags>
+        <PackageTags>ReaL Taiizor Soferity Vegalya Starterkit C# CSharp VBC VB VisualBasic DotNET .NET NET Starter Kit Library Blazor Razor</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <!--<DocumentationFile>..\$(Title)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(Title).xml</DocumentationFile>-->
         <PackageProjectUrl>https://github.com/Taiizor/Starterkit</PackageProjectUrl>

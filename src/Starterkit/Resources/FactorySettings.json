@@ -1,0 +1,55 @@
+{
+    "Vegalya": {
+        "Domain": "https://www.vegalya.com",
+        "ThemeName": "Vegalya Theme",
+        "LocaleSwitchEnabled": true,
+        "ModeSwitchEnabled": true,
+        "LocaleDefault": "en-GB",
+        "ModeDefault": "system",
+        "AssetsDir": "assets/",
+        "Direction": "ltr",
+        "ThirdParty": {
+            "GoogleAnalytics": "NULL",
+            "GoogleAdsense": "NULL",
+            "YandexMetrika": "NULL"
+        },
+        "Languages": {
+            "DefaultFlag": "european-union",
+            "CookieName": "Factorial",
+            "UnknownName": "Unknown",
+            "UnknownLang": "xy-XY",
+            "CookieExpires": 90,
+            "ActiveLang": [
+                "en-GB"
+            ],
+            "List": {
+                "English": {
+                    "en-GB": "united-kingdom"
+                }
+            }
+        },
+        "Assets": {
+            "Favicon": "media/logos/favicon.ico",
+            "Manifest": "manifest.json",
+            "Fonts": [
+                "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"
+            ],
+            "Css": [
+                "css/app.css"
+            ],
+            "Js": [
+                "js/app.js"
+            ]
+        },
+        "Vendors": {
+            "special-library": {
+                "Css": [
+                    "plugins/custom/special-library/special-library.css"
+                ],
+                "Js": [
+                    "plugins/custom/special-library/special-library.js"
+                ]
+            }
+        }
+    }
+}
