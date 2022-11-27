@@ -3,7 +3,7 @@
     <PropertyGroup>
         <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
         <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
-        <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+        <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
         <RootNamespace>Starterkit</RootNamespace>
         <TargetFramework>net7.0</TargetFramework>
         <DefaultLanguage>en-GB</DefaultLanguage>
@@ -13,7 +13,7 @@
 
     <PropertyGroup>
         <ApplicationIcon>Resources\Starterkit.ico</ApplicationIcon>
-        <Version>1.0.0.8</Version>
+        <Version>1.0.0.9</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Starterkit</Title>
@@ -73,16 +73,13 @@ Changes are detailed at https://github.com/Taiizor/Starterkit/releases
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
+        <Content Update="Resources\FactorySettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
         <Folder Include="Properties\" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Content Update="Resources\FactorySettings.json">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
     </ItemGroup>
 
 </Project>
