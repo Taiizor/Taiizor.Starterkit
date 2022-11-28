@@ -6,9 +6,9 @@ namespace Starterkit.Extension
     {
         public static ThemeBase Config;
 
-        public static void Init(IConfiguration configuration, string key)
+        public static void Init(IConfiguration Configuration, string Key)
         {
-            Config = configuration.GetSection(key).Get<ThemeBase>();
+            Config = Configuration.GetSection(Key).Get<ThemeBase>();
         }
     }
 }

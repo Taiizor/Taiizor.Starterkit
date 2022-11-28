@@ -24,7 +24,7 @@ namespace Starterkit
         public void InitLocaleMode()
         {
             _theme.SetLocaleSwitch(ThemeSettings.Config.LocaleSwitchEnabled);
-            //_theme.SetLocaleDefault(KTThemeSettings.Config.LocaleDefault);
+            //_theme.SetLocaleDefault(ThemeSettings.Config.LocaleDefault);
         }
 
         // Init theme mode option from settings

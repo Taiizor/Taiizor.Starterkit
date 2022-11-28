@@ -1,19 +1,20 @@
 namespace Starterkit.Interface
 {
+    // Core bootstrap base interface
     public interface IBootstrapBase
     {
-        void Init(ITheme theme);
-
-        void InitLocaleMode();
-
-        void InitThemeMode();
-
-        void InitThemeDirection();
-
         void InitRtl();
+
+        void InitDomain();
 
         void InitLayout();
 
-        void InitDomain();
+        void InitThemeMode();
+
+        void InitLocaleMode();
+
+        void Init(ITheme theme);
+
+        void InitThemeDirection();
     }
 }

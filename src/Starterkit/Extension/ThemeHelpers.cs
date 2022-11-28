@@ -12,24 +12,24 @@ namespace Starterkit.Extension
             _js = js;
         }
 
-        public void AddBodyAttribute(string attribute, string value)
+        public async void AddBodyClass(string className)
         {
-            _ = _js.InvokeVoidAsync("document.body.setAttribute", attribute, value);
+            await _js.InvokeVoidAsync("document.body.classList.add", className);
         }
 
-        public void RemoveBodyAttribute(string attribute)
+        public async void RemoveBodyClass(string className)
         {
-            _ = _js.InvokeVoidAsync("document.body.classList.removeAttribute", attribute);
+            await _js.InvokeVoidAsync("document.body.classList.remove", className);
         }
 
-        public void AddBodyClass(string className)
+        public async void RemoveBodyAttribute(string attribute)
         {
-            _ = _js.InvokeVoidAsync("document.body.classList.add", className);
+            await _js.InvokeVoidAsync("document.body.classList.removeAttribute", attribute);
         }
 
-        public void RemoveBodyClass(string className)
+        public async void AddBodyAttribute(string attribute, string value)
         {
-            _ = _js.InvokeVoidAsync("document.body.classList.remove", className);
+            await _js.InvokeVoidAsync("document.body.setAttribute", attribute, value);
         }
     }
 }

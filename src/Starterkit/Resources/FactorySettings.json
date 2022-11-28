@@ -29,7 +29,7 @@
             }
         },
         "Assets": {
-            "Favicon": "media/logos/favicon.ico",
+            "Favicon": "media/favicon.ico",
             "Manifest": "manifest.json",
             "Fonts": [
                 "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"

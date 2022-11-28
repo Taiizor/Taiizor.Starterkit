@@ -7,27 +7,30 @@ namespace Starterkit.Extension
     public class Theme : ITheme
     {
         // Theme variables
-        private readonly SortedDictionary<string, SortedDictionary<string, string>> _htmlAttributes = new();
-
-        private readonly SortedDictionary<string, string[]> _htmlClasses = new();
-
-        private bool _localeSwitchEnabled = true;
-
-        private bool _modeSwitchEnabled = true;
+        private string _direction = "ltr";
 
         private string _modeDefault = "system";
 
-        private string _direction = "ltr";
+        private bool _modeSwitchEnabled = true;
+
+        private bool _localeSwitchEnabled = true;
+
+        private readonly SortedDictionary<string, string[]> _htmlClasses = new();
+
+        private readonly SortedDictionary<string, SortedDictionary<string, string>> _htmlAttributes = new();
 
         // Add HTML attributes by scope
         public void AddHtmlAttribute(string scope, string attributeName, string attributeValue)
         {
             SortedDictionary<string, string> attribute = new();
+
             if (_htmlAttributes.ContainsKey(scope))
             {
                 attribute = _htmlAttributes[scope];
             }
+
             attribute[attributeName] = attributeValue;
+
             _htmlAttributes[scope] = attribute;
         }
 
@@ -35,11 +38,14 @@ namespace Starterkit.Extension
         public void AddHtmlClass(string scope, string className)
         {
             List<string> list = new();
-            if (_htmlClasses.ContainsKey(scope))
+
+            if (_htmlClasses.TryGetValue(scope, out string[] value))
             {
-                list = _htmlClasses[scope].ToList();
+                list = value.ToList();
             }
+
             list.Add(className);
+
             _htmlClasses[scope] = list.ToArray();
         }
 
@@ -47,25 +53,29 @@ namespace Starterkit.Extension
         public string PrintHtmlAttributes(string scope)
         {
             List<string> list = new();
-            if (_htmlAttributes.ContainsKey(scope))
+
+            if (_htmlAttributes.TryGetValue(scope, out SortedDictionary<string, string> value))
             {
-                foreach (KeyValuePair<string, string> attribute in _htmlAttributes[scope])
+                foreach (KeyValuePair<string, string> attribute in value)
                 {
-                    string item = attribute.Key + "=" + attribute.Value;
+                    string item = attribute.Key + "=\"" + attribute.Value + "\"";
                     list.Add(item);
                 }
+
                 return string.Join(" ", list);
             }
+
             return null;
         }
 
         // Print HTML classes for the HTML template
         public string PrintHtmlClasses(string scope)
         {
-            if (_htmlClasses.ContainsKey(scope))
+            if (_htmlClasses.TryGetValue(scope, out string[] value))
             {
-                return string.Join(" ", _htmlClasses[scope]);
+                return string.Join(" ", value);
             }
+
             return null;
         }
 
@@ -183,6 +193,7 @@ namespace Starterkit.Extension
             return _direction.ToLower() == "rtl";
         }
 
+        // Get assets path
         public string GetAssetPath(string path)
         {
             return $"/{ThemeSettings.Config.AssetsDir}{path}";
@@ -227,9 +238,9 @@ namespace Starterkit.Extension
         // Get the languages value
         public KeyValuePair<string, string> GetLanguages(string lang)
         {
-            if (GetLanguages().ContainsKey(lang))
+            if (GetLanguages().TryGetValue(lang, out Dictionary<string, string> value))
             {
-                return GetLanguages()[lang].First();
+                return value.First();
             }
             else
             {
@@ -298,8 +309,8 @@ namespace Starterkit.Extension
         // Get the global assets
         public string[] GetGlobalAssets(string type)
         {
-            List<string> files =
-                type == "Css" ? ThemeSettings.Config.Assets.Css : ThemeSettings.Config.Assets.Js;
+            List<string> files = type == "Css" ? ThemeSettings.Config.Assets.Css : ThemeSettings.Config.Assets.Js;
+
             List<string> newList = new();
 
             foreach (string file in files)
@@ -317,14 +328,16 @@ namespace Starterkit.Extension
             return newList.ToArray();
         }
 
+        // Get attributes by scope
         public string GetAttributeValue(string scope, string attributeName)
         {
-            if (_htmlAttributes.ContainsKey(scope))
+            if (_htmlAttributes.TryGetValue(scope, out SortedDictionary<string, string> value))
             {
-                if (_htmlAttributes[scope].ContainsKey(attributeName))
+                if (value.TryGetValue(attributeName, out string valued))
                 {
-                    return _htmlAttributes[scope][attributeName];
+                    return valued;
                 }
+
                 return "";
             }
 
