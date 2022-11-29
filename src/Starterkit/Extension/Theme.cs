@@ -8,6 +8,7 @@ namespace Starterkit.Extension
     public class Theme : ITheme
     {
         // Theme variables
+        private string _localeDefault;
 
         private string _modeDefault = "system";
 
@@ -133,11 +134,11 @@ namespace Starterkit.Extension
         {
             return _localeSwitchEnabled;
         }
-
+        
         // Set the locale to language
-        public void SetLocaleDefault(string flag)
+        public void SetLocale(string flag)
         {
-            if (GetLocaleDefault() != flag)
+            if (GetLocale() != flag)
             {
                 CultureInfo.CurrentCulture = new(flag);
                 CultureInfo.CurrentUICulture = new(flag);
@@ -145,21 +146,45 @@ namespace Starterkit.Extension
         }
 
         // Get current locale
-        public string GetLocaleDefault()
+        public string GetLocale()
         {
             return CultureInfo.CurrentCulture.Name;
         }
 
         // Get current locale lower
-        public string GetLocaleDefaultLower()
+        public string GetLocaleLower()
         {
-            return GetLocaleDefault().ToLowerInvariant();
+            return GetLocale().ToLowerInvariant();
         }
 
         // Get current locale replace
+        public string GetLocaleReplace()
+        {
+            return GetLocale().Replace("-", "_");
+        }
+
+        // Set the locale default to language
+        public void SetLocaleDefault(string flag)
+        {
+            _localeDefault = flag;
+        }
+
+        // Get current locale default
+        public string GetLocaleDefault()
+        {
+            return _localeDefault;
+        }
+
+        // Get current locale default lower
+        public string GetLocaleDefaultLower()
+        {
+            return _localeDefault.ToLowerInvariant();
+        }
+
+        // Get current locale default replace
         public string GetLocaleDefaultReplace()
         {
-            return GetLocaleDefault().Replace("-", "_");
+            return _localeDefault.Replace("-", "_");
         }
 
         // Set dark mode enabled status

@@ -9,10 +9,11 @@
 
 @{
     BootstrapBase.Init(Theme);
+    Theme.SetLocale("fr-FR");
 }
 
 <!DOCTYPE html>
-<html lang="@Theme.GetLocaleDefaultLower()" @Html.Raw(Theme.PrintHtmlAttributes("html"))>
+<html lang="@Theme.GetLocaleLower()" @Html.Raw(Theme.PrintHtmlAttributes("html"))>
 
 <head>
     <title>Error</title>

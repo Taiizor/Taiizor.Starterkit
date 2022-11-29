@@ -27,6 +27,14 @@ namespace Starterkit.Interface
 
         bool IsLocaleSwitchEnabled();
 
+        void SetLocale(string flag);
+
+        string GetLocale();
+
+        string GetLocaleLower();
+
+        string GetLocaleReplace();
+
         void SetLocaleDefault(string flag);
 
         string GetLocaleDefault();
