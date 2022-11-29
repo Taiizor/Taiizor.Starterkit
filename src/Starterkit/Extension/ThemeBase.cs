@@ -7,11 +7,15 @@ namespace Starterkit.Extension
 
         public string Domain { get; set; }
 
+        public string PagesDir { get; set; }
+
         public string AssetsDir { get; set; }
 
         public string Direction { get; set; }
 
         public string LayoutDir { get; set; }
+
+        public string PartialsDir { get; set; }
 
         public string ModeDefault { get; set; }
 
@@ -27,6 +31,6 @@ namespace Starterkit.Extension
 
         public ThemeThirdParty ThirdParty { get; set; }
 
-        public SortedDictionary<string, SortedDictionary<string, string[]>> Vendors { get; set; }
+        public SortedDictionary<string, SortedDictionary<string, ThemeVendors>> Vendors { get; set; }
     }
 }

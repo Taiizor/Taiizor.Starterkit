@@ -1,3 +1,5 @@
+using Starterkit.Enum;
+
 namespace Starterkit.Interface
 {
     // Core theme interface
@@ -41,21 +43,21 @@ namespace Starterkit.Interface
 
         string GetModeDefault();
 
-        void SetDirection(string direction);
+        void SetDirection(DirectionEnum direction);
 
-        string GetDirection();
+        DirectionEnum GetDirection();
 
         bool IsRtlDirection();
 
         string GetAssetPath(string path);
 
+        string GetPartials(string path);
+
+        string GetLayout(string path);
+
+        string GetPages(string path);
+
         string ExtendCssFilename(string path);
-
-        string GetManifest();
-
-        string GetFavicon();
-
-        string[] GetFonts();
 
         Dictionary<string, Dictionary<string, string>> GetLanguages();
 
@@ -75,7 +77,31 @@ namespace Starterkit.Interface
 
         bool IsLangActiveLang(string lang);
 
-        string[] GetGlobalAssets(string type);
+        string GetManifest();
+
+        string GetFavicon();
+
+        string[] GetFonts();
+
+        string[] GetGlobalAssets(TypeEnum type);
+
+        void AddVendors(string[] vendors);
+
+        void AddVendor(string vendor);
+
+        void AddJavascriptFile(string file);
+
+        void AddFontFile(string file);
+
+        void AddCssFile(string file);
+
+        string[] GetJavascriptFiles();
+
+        string[] GetFontFiles();
+
+        string[] GetCssFiles();
+
+        string[] GetVendors(string type);
 
         string GetAttributeValue(string scope, string attributeName);
     }

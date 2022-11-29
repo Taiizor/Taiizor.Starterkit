@@ -1,12 +1,14 @@
 {
     "Vegalya": {
         "Domain": "https://www.vegalya.com/",
-        "ThemeName": "Vegalya Theme",
+        "PartialsDir": "~/Shared/Partials",
+        "LayoutDir": "~/Shared/Layout",
         "LocaleSwitchEnabled": true,
         "ModeSwitchEnabled": true,
         "LocaleDefault": "en-GB",
         "ModeDefault": "system",
         "AssetsDir": "assets/",
+        "PagesDir": "~/Pages",
         "Direction": "ltr",
         "ThirdParty": {
             "GoogleAnalytics": "NULL",
@@ -31,7 +33,7 @@
         "Assets": {
             "Favicon": "media/favicon.ico",
             "Manifest": "manifest.json",
-            "Fonts": [
+            "Font": [
                 "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"
             ],
             "Css": [
@@ -43,6 +45,9 @@
         },
         "Vendors": {
             "special-library": {
+                "Font": [
+                    "plugins/custom/special-library/special-library.ttf"
+                ],
                 "Css": [
                     "plugins/custom/special-library/special-library.css"
                 ],

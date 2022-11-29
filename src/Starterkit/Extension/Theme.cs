@@ -1,3 +1,4 @@
+using Starterkit.Enum;
 using Starterkit.Interface;
 using System.Globalization;
 
@@ -7,7 +8,6 @@ namespace Starterkit.Extension
     public class Theme : ITheme
     {
         // Theme variables
-        private string _direction = "ltr";
 
         private string _modeDefault = "system";
 
@@ -15,9 +15,20 @@ namespace Starterkit.Extension
 
         private bool _localeSwitchEnabled = true;
 
+        private DirectionEnum _direction = DirectionEnum.LTR;
+
         private readonly SortedDictionary<string, string[]> _htmlClasses = new();
 
         private readonly SortedDictionary<string, SortedDictionary<string, string>> _htmlAttributes = new();
+
+        // Keep page level assets
+        private readonly List<string> _jsFiles = new();
+
+        private readonly List<string> _cssFiles = new();
+
+        private readonly List<string> _fontFiles = new();
+
+        private readonly List<string> _vendorFiles = new();
 
         // Add HTML attributes by scope
         public void AddHtmlAttribute(string scope, string attributeName, string attributeValue)
@@ -176,13 +187,13 @@ namespace Starterkit.Extension
         }
 
         // Set style direction
-        public void SetDirection(string direction)
+        public void SetDirection(DirectionEnum direction)
         {
             _direction = direction;
         }
 
         // Get style direction
-        public string GetDirection()
+        public DirectionEnum GetDirection()
         {
             return _direction;
         }
@@ -190,7 +201,7 @@ namespace Starterkit.Extension
         // Check if style direction is RTL
         public bool IsRtlDirection()
         {
-            return _direction.ToLower() == "rtl";
+            return _direction == DirectionEnum.RTL;
         }
 
         // Get assets path
@@ -199,34 +210,33 @@ namespace Starterkit.Extension
             return $"/{ThemeSettings.Config.AssetsDir}{path}";
         }
 
+        // Get partials path
+        public string GetPartials(string path)
+        {
+            return $"{ThemeSettings.Config.PartialsDir}/{path}";
+        }
+
+        // Get layout path
+        public string GetLayout(string path)
+        {
+            return $"{ThemeSettings.Config.LayoutDir}/{path}";
+        }
+
+        // Get pages path
+        public string GetPages(string path)
+        {
+            return $"{ThemeSettings.Config.PagesDir}/{path}";
+        }
+
         // Extend CSS file name with RTL
         public string ExtendCssFilename(string path)
         {
-
             if (IsRtlDirection())
             {
                 path = path.Replace(".css", ".rtl.css");
             }
 
             return path;
-        }
-
-        // Include favicon from settings
-        public string GetManifest()
-        {
-            return GetAssetPath(ThemeSettings.Config.Assets.Manifest);
-        }
-
-        // Include favicon from settings
-        public string GetFavicon()
-        {
-            return GetAssetPath(ThemeSettings.Config.Assets.Favicon);
-        }
-
-        // Include the fonts from settings
-        public string[] GetFonts()
-        {
-            return ThemeSettings.Config.Assets.Fonts.ToArray();
         }
 
         // Get the languages
@@ -306,16 +316,34 @@ namespace Starterkit.Extension
             return false;
         }
 
-        // Get the global assets
-        public string[] GetGlobalAssets(string type)
+        // Include favicon from settings
+        public string GetManifest()
         {
-            List<string> files = type == "Css" ? ThemeSettings.Config.Assets.Css : ThemeSettings.Config.Assets.Js;
+            return GetAssetPath(ThemeSettings.Config.Assets.Manifest);
+        }
+
+        // Include favicon from settings
+        public string GetFavicon()
+        {
+            return GetAssetPath(ThemeSettings.Config.Assets.Favicon);
+        }
+
+        // Include the fonts from settings
+        public string[] GetFonts()
+        {
+            return ThemeSettings.Config.Assets.Font.ToArray();
+        }
+
+        // Get the global assets
+        public string[] GetGlobalAssets(TypeEnum type)
+        {
+            List<string> files = type == TypeEnum.Css ? ThemeSettings.Config.Assets.Css : ThemeSettings.Config.Assets.Js;
 
             List<string> newList = new();
 
             foreach (string file in files)
             {
-                if (type == "Css")
+                if (type == TypeEnum.Css)
                 {
                     newList.Add(GetAssetPath(ExtendCssFilename(file)));
                 }
@@ -326,6 +354,101 @@ namespace Starterkit.Extension
             }
 
             return newList.ToArray();
+        }
+
+        // Add multiple vendors to the page by name
+        public void AddVendors(string[] vendors)
+        {
+            foreach (string vendor in vendors)
+            {
+                if (!_vendorFiles.Contains(vendor))
+                {
+                    _vendorFiles.Add(vendor);
+                }
+            }
+        }
+
+        // Add single vendor to the page by name
+        public void AddVendor(string vendor)
+        {
+            if (!_vendorFiles.Contains(vendor))
+            {
+                _vendorFiles.Add(vendor);
+            }
+        }
+
+        // Add custom Javascript file to the page
+        public void AddJavascriptFile(string file)
+        {
+            if (!_jsFiles.Contains(file))
+            {
+                _jsFiles.Add(file);
+            }
+        }
+
+        // Add custom Font file to the page
+        public void AddFontFile(string file)
+        {
+            if (!_fontFiles.Contains(file))
+            {
+                _fontFiles.Add(file);
+            }
+        }
+
+        // Add custom Css file to the page
+        public void AddCssFile(string file)
+        {
+            if (!_cssFiles.Contains(file))
+            {
+                _cssFiles.Add(file);
+            }
+        }
+
+        // Get custom Javascript file
+        public string[] GetJavascriptFiles()
+        {
+            return _jsFiles.ToArray();
+        }
+
+        // Get custom Font file
+        public string[] GetFontFiles()
+        {
+            return _fontFiles.ToArray();
+        }
+
+        // Get custom Css file
+        public string[] GetCssFiles()
+        {
+            return _cssFiles.ToArray();
+        }
+
+        // Get vendor files from settings
+        public string[] GetVendors(string type)
+        {
+            SortedDictionary<string, SortedDictionary<string, ThemeVendors>> vendors = ThemeSettings.Config.Vendors;
+
+            List<string> files = new();
+
+            foreach (string vendor in _vendorFiles)
+            {
+                if (vendors.TryGetValue(vendor, out SortedDictionary<string, ThemeVendors> value) && value.TryGetValue(type, out ThemeVendors valued))
+                {
+                    List<string> vendorFiles = new();
+
+                    vendorFiles.AddRange(valued.Font);
+                    vendorFiles.AddRange(valued.Css);
+                    vendorFiles.AddRange(valued.Js);
+
+                    foreach (string file in vendorFiles)
+                    {
+                        string vendorPath = file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file);
+
+                        files.Add(vendorPath);
+                    }
+                }
+            }
+
+            return files.ToArray();
         }
 
         // Get attributes by scope
