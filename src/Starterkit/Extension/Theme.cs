@@ -134,7 +134,7 @@ namespace Starterkit.Extension
         {
             return _localeSwitchEnabled;
         }
-        
+
         // Set the locale to language
         public void SetLocale(string flag)
         {
@@ -142,6 +142,8 @@ namespace Starterkit.Extension
             {
                 CultureInfo.CurrentCulture = new(flag);
                 CultureInfo.CurrentUICulture = new(flag);
+                CultureInfo.DefaultThreadCurrentCulture = new(flag);
+                CultureInfo.DefaultThreadCurrentUICulture = new(flag);
             }
         }
 
