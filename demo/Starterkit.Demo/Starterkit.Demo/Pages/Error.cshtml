@@ -1,15 +1,28 @@
 ﻿@page
 @model Starterkit.Demo.Pages.ErrorModel
 
+@using Starterkit.Enum
+@using Starterkit.Interface
+
+@inject ITheme Theme
+@inject IBootstrapBase BootstrapBase
+
+@{
+    BootstrapBase.Init(Theme);
+}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="@Theme.GetLocaleDefaultLower()" @Html.Raw(Theme.PrintHtmlAttributes("html"))>
 
 <head>
+    <title>Error</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Error</title>
-    <link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true" />
+
+    @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Css))
+    {
+        <link rel="stylesheet" type="text/css" href="@file" asp-append-version="true" />
+    }
 </head>
 
 <body>
