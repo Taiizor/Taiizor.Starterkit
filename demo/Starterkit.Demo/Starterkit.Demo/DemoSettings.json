@@ -1,0 +1,61 @@
+{
+  "Demo": {
+    "Domain": "https://www.vegalya.com/",
+    "PartialsDir": "~/Shared/Partials",
+    "LayoutDir": "~/Shared/Layout",
+    "LocaleSwitchEnabled": true,
+    "ModeSwitchEnabled": true,
+    "LocaleDefault": "en-GB",
+    "ModeDefault": "system",
+    "AssetsDir": "assets/",
+    "PagesDir": "~/Pages",
+    "Direction": "rtl",
+    "ThirdParty": {
+      "GoogleAnalytics": "NULL",
+      "GoogleAdsense": "NULL",
+      "YandexMetrika": "NULL"
+    },
+    "Languages": {
+      "DefaultFlag": "european-union",
+      "CookieName": "Factorial",
+      "UnknownName": "Unknown",
+      "UnknownLang": "xy-XY",
+      "CookieExpires": 30,
+      "ActiveLang": [
+        "en-GB"
+      ],
+      "List": {
+        "English": {
+          "en-GB": "united-kingdom"
+        }
+      }
+    },
+    "Assets": {
+      "Favicon": "favicon.png",
+      "Manifest": "manifest.json",
+      "Font": [
+        "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"
+      ],
+      "Css": [
+        "css/bootstrap/bootstrap.min.css",
+        "css/site.css"
+      ],
+      "Js": [
+        "js/jquery.min.js"
+      ]
+    },
+    "Vendors": {
+      "special-library2": {
+        "Font": [
+          "plugins/custom/special-library/special-library.ttf"
+        ],
+        "Css": [
+          "plugins/custom/special-library/special-library.css"
+        ],
+        "Js": [
+          "plugins/custom/special-library/special-library.js"
+        ]
+      }
+    }
+  }
+}

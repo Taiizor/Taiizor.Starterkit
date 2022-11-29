@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <UseRazorSourceGenerator>true</UseRazorSourceGenerator>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <RootNamespace>Starterkit.Demo</RootNamespace>
+    <TargetFramework>net7.0</TargetFramework>
+    <RazorLangVersion>7.0</RazorLangVersion>
+    <DefaultLanguage>en-GB</DefaultLanguage>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AnalysisLevel>preview</AnalysisLevel>
+    <LangVersion>preview</LangVersion>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Taiizor.Starterkit" Version="1.0.3" />
+  </ItemGroup>
+
+</Project>
