@@ -45,7 +45,7 @@ namespace Starterkit
         public void InitLocaleMode()
         {
             _theme.SetLocaleSwitch(ThemeSettings.Config.LocaleSwitchEnabled);
-            //_theme.SetLocaleDefault(ThemeSettings.Config.LocaleDefault);
+            _theme.SetLocaleDefault(ThemeSettings.Config.LocaleDefault);
         }
 
         // Global theme initializer
