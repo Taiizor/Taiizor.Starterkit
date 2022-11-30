@@ -406,19 +406,22 @@ namespace Starterkit.Extension
                     break;
             }
 
-            foreach (string file in files)
+            if (files.Any())
             {
-                if (type == TypeEnum.Css)
+                foreach (string file in files)
                 {
-                    newList.Add(GetAssetPath(ExtendCssFilename(file)));
-                }
-                else if (type == TypeEnum.Font)
-                {
-                    newList.Add(file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file));
-                }
-                else
-                {
-                    newList.Add(GetAssetPath(file));
+                    switch (type)
+                    {
+                        case TypeEnum.Js:
+                            newList.Add(GetAssetPath(file));
+                            break;
+                        case TypeEnum.Css:
+                            newList.Add(GetAssetPath(ExtendCssFilename(file)));
+                            break;
+                        case TypeEnum.Font:
+                            newList.Add(file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file));
+                            break;
+                    }
                 }
             }
 
@@ -498,30 +501,45 @@ namespace Starterkit.Extension
 
             List<string> files = new();
 
-            foreach (string vendor in _vendorFiles)
+            if (_vendorFiles.Any())
             {
-                if (vendors.TryGetValue(vendor, out ThemeVendors value))
+                foreach (string vendor in _vendorFiles)
                 {
-                    List<string> vendorFiles = new();
-
-                    switch (type)
+                    if (vendors.TryGetValue(vendor, out ThemeVendors value))
                     {
-                        case TypeEnum.Js:
-                            vendorFiles.AddRange(value.Js);
-                            break;
-                        case TypeEnum.Css:
-                            vendorFiles.AddRange(value.Css);
-                            break;
-                        case TypeEnum.Font:
-                            vendorFiles.AddRange(value.Font);
-                            break;
-                    }
+                        List<string> vendorFiles = new();
 
-                    foreach (string file in vendorFiles)
-                    {
-                        string vendorPath = file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file);
+                        switch (type)
+                        {
+                            case TypeEnum.Js:
+                                if (value.Js.Any())
+                                {
+                                    vendorFiles.AddRange(value.Js);
+                                }
+                                break;
+                            case TypeEnum.Css:
+                                if (value.Css.Any())
+                                {
+                                    vendorFiles.AddRange(value.Css);
+                                }
+                                break;
+                            case TypeEnum.Font:
+                                if (value.Font.Any())
+                                {
+                                    vendorFiles.AddRange(value.Font);
+                                }
+                                break;
+                        }
 
-                        files.Add(vendorPath);
+                        if (vendorFiles.Any())
+                        {
+                            foreach (string file in vendorFiles)
+                            {
+                                string vendorPath = file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file);
+
+                                files.Add(vendorPath);
+                            }
+                        }
                     }
                 }
             }

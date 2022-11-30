@@ -6,4 +6,19 @@
 
 Welcome to your new app.
 
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
 <SurveyPrompt Title="How is Starterkit working for you?" />
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
