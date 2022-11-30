@@ -81,6 +81,8 @@ namespace Starterkit.Interface
 
         string GetLangCookieName();
 
+        bool IsLangLocale(string lang);
+
         bool IsLangLocaleDefault(string lang);
 
         bool IsLangActiveLang(string lang);

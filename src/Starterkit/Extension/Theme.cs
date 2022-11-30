@@ -8,9 +8,9 @@ namespace Starterkit.Extension
     public class Theme : ITheme
     {
         // Theme variables
-        private string _localeDefault;
-
         private string _modeDefault = "system";
+
+        private string _localeDefault = "en-GB";
 
         private bool _modeSwitchEnabled = true;
 
@@ -315,6 +315,19 @@ namespace Starterkit.Extension
             return ThemeSettings.Config.Languages.CookieName;
         }
 
+        // Check lang locale status
+        public bool IsLangLocale(string lang)
+        {
+            if (GetLanguages(lang).Key == GetLocale())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         // Check lang locale default status
         public bool IsLangLocaleDefault(string lang)
         {
@@ -327,6 +340,7 @@ namespace Starterkit.Extension
                 return false;
             }
         }
+        
         // Check lang active lang status
         public bool IsLangActiveLang(string lang)
         {
