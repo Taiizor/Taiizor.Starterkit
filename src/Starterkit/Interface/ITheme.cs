@@ -115,6 +115,12 @@ namespace Starterkit.Interface
 
         string[] GetCssFiles();
 
+        void ClearJavascriptFiles();
+
+        void ClearFontFiles();
+
+        void ClearCssFiles();
+
         string[] GetVendors(TypeEnum type);
 
         string GetAttributeValue(string scope, string attributeName);

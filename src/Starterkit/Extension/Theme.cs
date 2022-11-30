@@ -494,6 +494,24 @@ namespace Starterkit.Extension
             return _cssFiles.ToArray();
         }
 
+        // Clear custom Javascript file
+        public void ClearJavascriptFiles()
+        {
+            _jsFiles.Clear();
+        }
+
+        // Clear custom Font file
+        public void ClearFontFiles()
+        {
+            _fontFiles.Clear();
+        }
+
+        // Clear custom Css file
+        public void ClearCssFiles()
+        {
+            _cssFiles.Clear();
+        }
+
         // Get vendor files from settings
         public string[] GetVendors(TypeEnum type)
         {
@@ -512,19 +530,19 @@ namespace Starterkit.Extension
                         switch (type)
                         {
                             case TypeEnum.Js:
-                                if (value.Js.Any())
+                                if (value.Js != null && value.Js.Any())
                                 {
                                     vendorFiles.AddRange(value.Js);
                                 }
                                 break;
                             case TypeEnum.Css:
-                                if (value.Css.Any())
+                                if (value.Css != null && value.Css.Any())
                                 {
                                     vendorFiles.AddRange(value.Css);
                                 }
                                 break;
                             case TypeEnum.Font:
-                                if (value.Font.Any())
+                                if (value.Font != null && value.Font.Any())
                                 {
                                     vendorFiles.AddRange(value.Font);
                                 }
