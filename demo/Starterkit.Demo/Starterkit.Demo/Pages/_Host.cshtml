@@ -27,14 +27,14 @@
 
     <link rel="icon" type="image/png" href="@Theme.GetFavicon()" />
     
-    <!--begin::Global Fonts-->
+    <!--begin::Global Fonts(mandatory)-->
     @foreach (string font in Theme.GetGlobalAssets(TypeEnum.Font))
     {
         <link rel="stylesheet" href="@font" />
     }
     <!--end::Global Fonts-->
     
-    <!--begin::Vendor Fonts-->
+    <!--begin::Vendor Fonts(optional)-->
     @foreach (string font in Theme.GetVendors(TypeEnum.Font))
     {
         <link rel="stylesheet" href="@font" />
