@@ -3,6 +3,7 @@
     public enum TypeEnum
     {
         Js,
-        Css
+        Css,
+        Font
     }
 }

@@ -1,6 +1,7 @@
 ﻿@page "/"
 
 @using Starterkit.Enum
+@using Starterkit.Extension;
 @using Starterkit.Interface
 @using Microsoft.AspNetCore.Components.Web
 
@@ -13,6 +14,7 @@
 
 @{
     BootstrapBase.Init(Theme);
+    Theme.AddVendor("special-library");
 }
 
 <!DOCTYPE html>
@@ -25,12 +27,19 @@
 
     <link rel="icon" type="image/png" href="@Theme.GetFavicon()" />
     
-    <!--begin::Fonts-->
-    @foreach (string font in Theme.GetFonts())
+    <!--begin::Global Fonts-->
+    @foreach (string font in Theme.GetGlobalAssets(TypeEnum.Font))
     {
         <link rel="stylesheet" href="@font" />
     }
-    <!--end::Fonts-->
+    <!--end::Global Fonts-->
+    
+    <!--begin::Vendor Fonts-->
+    @foreach (string font in Theme.GetVendors(TypeEnum.Font))
+    {
+        <link rel="stylesheet" href="@font" />
+    }
+    <!--end::Vendor Fonts-->
     
     <!--begin::Global Stylesheets(mandatory)-->
     @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Css))
@@ -38,6 +47,13 @@
         <link rel="stylesheet" type="text/css" href="@file" />
     }
     <!--end::Global Stylesheets-->
+    
+    <!--begin::Vendor Stylesheets(optional)-->
+    @foreach (string file in Theme.GetVendors(TypeEnum.Css))
+    {
+        <link rel="stylesheet" type="text/css" href="@file" />
+    }
+    <!--end::Vendor Stylesheets-->
 </head>
 <body>
     <component type="typeof(Route)" render-mode="ServerPrerendered" />
@@ -59,6 +75,13 @@
         <script src="@file"></script>
     }
     <!--end::Global Javascript-->
+    
+    <!--begin::Vendors Javascript(optional)-->
+    @foreach (string file in Theme.GetVendors(TypeEnum.Js))
+    {
+        <script src="@file"></script>
+    }
+    <!--end::Vendors Javascript-->
     
     <script src="_framework/blazor.server.js"></script>
 </body>

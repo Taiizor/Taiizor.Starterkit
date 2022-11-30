@@ -45,7 +45,7 @@
       ]
     },
     "Vendors": {
-      "special-library2": {
+      "special-library": {
         "Font": [
           "plugins/custom/special-library/special-library.ttf"
         ],

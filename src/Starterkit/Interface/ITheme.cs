@@ -91,7 +91,11 @@ namespace Starterkit.Interface
 
         string GetFavicon();
 
+        string[] GetJavascripts();
+
         string[] GetFonts();
+
+        string[] GetCss();
 
         string[] GetGlobalAssets(TypeEnum type);
 
@@ -111,7 +115,7 @@ namespace Starterkit.Interface
 
         string[] GetCssFiles();
 
-        string[] GetVendors(string type);
+        string[] GetVendors(TypeEnum type);
 
         string GetAttributeValue(string scope, string attributeName);
     }

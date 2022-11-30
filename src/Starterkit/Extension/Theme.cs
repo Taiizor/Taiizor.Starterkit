@@ -340,7 +340,7 @@ namespace Starterkit.Extension
                 return false;
             }
         }
-        
+
         // Check lang active lang status
         public bool IsLangActiveLang(string lang)
         {
@@ -369,24 +369,52 @@ namespace Starterkit.Extension
             return GetAssetPath(ThemeSettings.Config.Assets.Favicon);
         }
 
+        // Include the javascripts from settings
+        public string[] GetJavascripts()
+        {
+            return ThemeSettings.Config.Assets.Js.ToArray();
+        }
+
         // Include the fonts from settings
         public string[] GetFonts()
         {
             return ThemeSettings.Config.Assets.Font.ToArray();
         }
 
+        // Include the css from settings
+        public string[] GetCss()
+        {
+            return ThemeSettings.Config.Assets.Css.ToArray();
+        }
+
         // Get the global assets
         public string[] GetGlobalAssets(TypeEnum type)
         {
-            List<string> files = type == TypeEnum.Css ? ThemeSettings.Config.Assets.Css : ThemeSettings.Config.Assets.Js;
-
+            List<string> files = new();
             List<string> newList = new();
+
+            switch (type)
+            {
+                case TypeEnum.Js:
+                    files = ThemeSettings.Config.Assets.Js;
+                    break;
+                case TypeEnum.Css:
+                    files = ThemeSettings.Config.Assets.Css;
+                    break;
+                case TypeEnum.Font:
+                    files = ThemeSettings.Config.Assets.Font;
+                    break;
+            }
 
             foreach (string file in files)
             {
                 if (type == TypeEnum.Css)
                 {
                     newList.Add(GetAssetPath(ExtendCssFilename(file)));
+                }
+                else if (type == TypeEnum.Font)
+                {
+                    newList.Add(file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file));
                 }
                 else
                 {
@@ -464,21 +492,30 @@ namespace Starterkit.Extension
         }
 
         // Get vendor files from settings
-        public string[] GetVendors(string type)
+        public string[] GetVendors(TypeEnum type)
         {
-            SortedDictionary<string, SortedDictionary<string, ThemeVendors>> vendors = ThemeSettings.Config.Vendors;
+            Dictionary<string, ThemeVendors> vendors = ThemeSettings.Config.Vendors;
 
             List<string> files = new();
 
             foreach (string vendor in _vendorFiles)
             {
-                if (vendors.TryGetValue(vendor, out SortedDictionary<string, ThemeVendors> value) && value.TryGetValue(type, out ThemeVendors valued))
+                if (vendors.TryGetValue(vendor, out ThemeVendors value))
                 {
                     List<string> vendorFiles = new();
 
-                    vendorFiles.AddRange(valued.Font);
-                    vendorFiles.AddRange(valued.Css);
-                    vendorFiles.AddRange(valued.Js);
+                    switch (type)
+                    {
+                        case TypeEnum.Js:
+                            vendorFiles.AddRange(value.Js);
+                            break;
+                        case TypeEnum.Css:
+                            vendorFiles.AddRange(value.Css);
+                            break;
+                        case TypeEnum.Font:
+                            vendorFiles.AddRange(value.Font);
+                            break;
+                    }
 
                     foreach (string file in vendorFiles)
                     {

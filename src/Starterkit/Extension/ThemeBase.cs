@@ -31,6 +31,6 @@ namespace Starterkit.Extension
 
         public ThemeThirdParty ThirdParty { get; set; }
 
-        public SortedDictionary<string, SortedDictionary<string, ThemeVendors>> Vendors { get; set; }
+        public Dictionary<string, ThemeVendors> Vendors { get; set; }
     }
 }
