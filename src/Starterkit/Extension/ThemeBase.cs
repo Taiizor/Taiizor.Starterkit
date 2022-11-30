@@ -31,6 +31,8 @@ namespace Starterkit.Extension
 
         public ThemeThirdParty ThirdParty { get; set; }
 
+        public ThemeSocialMedia SocialMedia { get; set; }
+
         public Dictionary<string, ThemeVendors> Vendors { get; set; }
     }
 }

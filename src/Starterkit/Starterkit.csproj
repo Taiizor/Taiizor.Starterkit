@@ -13,7 +13,7 @@
 
     <PropertyGroup>
         <ApplicationIcon>Resources\Starterkit.ico</ApplicationIcon>
-        <Version>1.0.4.0</Version>
+        <Version>1.0.5.0</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Starterkit</Title>

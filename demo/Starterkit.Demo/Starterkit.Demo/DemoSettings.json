@@ -10,6 +10,18 @@
     "AssetsDir": "assets/",
     "PagesDir": "~/Pages",
     "Direction": "rtl",
+    "SocialMedia": {
+      "GitHub": {
+        "Url": "https://github.com/Taiizor",
+        "Alt": "GitHub Address",
+        "Icon": "github"
+      },
+      "Instagram": {
+        "Url": "https://www.instagram.com/Taiizor",
+        "Alt": "Instagram Address",
+        "Icon": "instagram"
+      }
+    },
     "ThirdParty": {
       "GoogleAnalytics": "NULL",
       "GoogleAdsense": "NULL",

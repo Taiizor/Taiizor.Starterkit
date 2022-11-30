@@ -67,6 +67,10 @@ namespace Starterkit.Interface
 
         string ExtendCssFilename(string path);
 
+        Dictionary<string, Dictionary<string, string>> GetSocialMedias();
+
+        string GetSocialMedia(string name, MediaEnum type);
+
         Dictionary<string, Dictionary<string, string>> GetLanguages();
 
         KeyValuePair<string, string> GetLanguages(string lang);

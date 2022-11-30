@@ -1,6 +1,7 @@
 using Starterkit.Enum;
 using Starterkit.Interface;
 using System.Globalization;
+using System.Reflection;
 
 namespace Starterkit.Extension
 {
@@ -264,6 +265,47 @@ namespace Starterkit.Extension
             }
 
             return path;
+        }
+
+        // Get the social medias
+        public Dictionary<string, Dictionary<string, string>> GetSocialMedias()
+        {
+            Dictionary<string, Dictionary<string, string>> list = new();
+
+            foreach (PropertyInfo properties in ThemeSettings.Config.SocialMedia.GetType().GetProperties())
+            {
+                if (!list.ContainsKey(properties.Name))
+                {
+                    object propertyValue = properties.GetValue(ThemeSettings.Config.SocialMedia);
+
+                    if (propertyValue != null)
+                    {
+                        Dictionary<string, string> result = propertyValue as Dictionary<string, string>;
+
+                        result.TryGetValue("Url", out string url);
+                        result.TryGetValue("Alt", out string alt);
+                        result.TryGetValue("Icon", out string icon);
+
+                        list.Add(properties.Name, new() { { "Url", url }, { "Alt", alt }, { "Icon", icon } });
+                    }
+                }
+            }
+
+            return list;
+        }
+
+        // Get the social media
+        public string GetSocialMedia(string name, MediaEnum type)
+        {
+            if (GetSocialMedias().TryGetValue(name, out Dictionary<string, string> value))
+            {
+                if (value.TryGetValue(type.ToString(), out string valued))
+                {
+                    return valued;
+                }
+            }
+
+            return "";
         }
 
         // Get the languages
