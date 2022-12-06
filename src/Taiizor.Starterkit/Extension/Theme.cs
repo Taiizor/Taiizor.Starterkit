@@ -112,6 +112,18 @@ namespace Taiizor.Starterkit.Extension
             return ThemeSettings.Config.Domain;
         }
 
+        // Set the version
+        public void SetVersion(string flag)
+        {
+            ThemeSettings.Config.Version = flag;
+        }
+
+        // Get current version
+        public string GetVersion()
+        {
+            return ThemeSettings.Config.Version;
+        }
+
         // Set the domain to uri
         public void SetUri(string flag)
         {

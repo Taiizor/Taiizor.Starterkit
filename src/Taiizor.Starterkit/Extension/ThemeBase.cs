@@ -7,6 +7,8 @@ namespace Taiizor.Starterkit.Extension
 
         public string Domain { get; set; }
 
+        public string Version { get; set; }
+
         public string PagesDir { get; set; }
 
         public string AssetsDir { get; set; }

@@ -19,6 +19,10 @@ namespace Taiizor.Starterkit.Interface
 
         string GetDomain();
 
+        void SetVersion(string flag);
+
+        string GetVersion();
+
         void SetUri(string flag);
 
         string GetUri();

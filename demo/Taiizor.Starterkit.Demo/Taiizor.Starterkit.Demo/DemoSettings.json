@@ -10,6 +10,7 @@
     "AssetsDir": "assets/",
     "PagesDir": "~/Pages",
     "Direction": "rtl",
+    "Version": "1.0.1",
     "SocialMedia": {
       "GitHub": {
         "Url": "https://github.com/Taiizor",
