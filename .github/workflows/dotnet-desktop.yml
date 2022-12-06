@@ -18,7 +18,7 @@ jobs:
             Release
         ]
         solution: [
-            src/Starterkit.sln
+            src/Taiizor.Starterkit.sln
         ]
 
     steps:
@@ -42,7 +42,7 @@ jobs:
       run: dotnet test ${{ matrix.solution }} -c ${{ matrix.configuration }} /nowarn:CS0067,CS0108,CS0109,CS0114,CS0169,CS0414,CS0649,CA1416,NU5104,NETSDK1138,SYSLIB0003
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
-    - name: Restore the Starterkit
+    - name: Restore the Taiizor.Starterkit
       run: msbuild ${{ matrix.solution }} /t:Restore /p:Configuration=$env:Configuration
       env:
         Configuration: ${{ matrix.configuration }}

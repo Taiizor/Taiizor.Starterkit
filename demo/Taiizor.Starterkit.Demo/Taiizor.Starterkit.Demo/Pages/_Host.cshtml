@@ -1,0 +1,88 @@
+﻿@page "/"
+
+@using Taiizor.Starterkit.Enum
+@using Taiizor.Starterkit.Extension;
+@using Taiizor.Starterkit.Interface
+@using Microsoft.AspNetCore.Components.Web
+
+@namespace Taiizor.Starterkit.Demo.Pages
+
+@inject ITheme Theme
+@inject IBootstrapBase BootstrapBase
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    BootstrapBase.Init(Theme);
+    Theme.AddVendor("special-library");
+}
+
+<!DOCTYPE html>
+<html lang="@Theme.GetLocaleDefaultLower()" @Html.Raw(Theme.PrintHtmlAttributes("html"))>
+<head>
+    <base href="~/" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
+
+    <link rel="icon" type="image/png" href="@Theme.GetFavicon()" />
+    
+    <!--begin::Global Fonts(mandatory)-->
+    @foreach (string font in Theme.GetGlobalAssets(TypeEnum.Font))
+    {
+        <link rel="stylesheet" href="@font" />
+    }
+    <!--end::Global Fonts-->
+    
+    <!--begin::Vendor Fonts(optional)-->
+    @foreach (string font in Theme.GetVendors(TypeEnum.Font))
+    {
+        <link rel="stylesheet" href="@font" />
+    }
+    <!--end::Vendor Fonts-->
+    
+    <!--begin::Global Stylesheets(mandatory)-->
+    @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Css))
+    {
+        <link rel="stylesheet" type="text/css" href="@file" />
+    }
+    <!--end::Global Stylesheets-->
+    
+    <!--begin::Vendor Stylesheets(optional)-->
+    @foreach (string file in Theme.GetVendors(TypeEnum.Css))
+    {
+        <link rel="stylesheet" type="text/css" href="@file" />
+    }
+    <!--end::Vendor Stylesheets-->
+</head>
+<body>
+    <component type="typeof(Route)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <!--begin::Global Javascript(mandatory)-->
+    @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Js))
+    {
+        <script src="@file"></script>
+    }
+    <!--end::Global Javascript-->
+    
+    <!--begin::Vendors Javascript(optional)-->
+    @foreach (string file in Theme.GetVendors(TypeEnum.Js))
+    {
+        <script src="@file"></script>
+    }
+    <!--end::Vendors Javascript-->
+    
+    <script src="_framework/blazor.server.js"></script>
+</body>
+</html>

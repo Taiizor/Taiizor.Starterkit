@@ -9,8 +9,8 @@
 
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
-# Welcome to Starterkit
-Starterkit is a starterkit library for projects using .NET Blazor. It provides convenience with various functions it offers.
+# Welcome to Taiizor.Starterkit
+Taiizor.Starterkit is a starterkit library for projects using .NET Blazor. It provides convenience with various functions it offers.
 
 ## Contributors
 
@@ -27,7 +27,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 			</sub>
 		</a>
 		<br/>
-		<a href="https://github.com/Taiizor/Starterkit/commits?author=Taiizor" title="Code">💻</a>
+		<a href="https://github.com/Taiizor/Taiizor.Starterkit/commits?author=Taiizor" title="Code">💻</a>
 		<a href="https://www.taiizor.com" title="Ideas & Planning, Feedback">🤔</a>
 	</td>
   </tr>
