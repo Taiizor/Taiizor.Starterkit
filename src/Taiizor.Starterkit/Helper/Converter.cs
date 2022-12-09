@@ -16,6 +16,7 @@ namespace Taiizor.Starterkit.Helper
 
             return Back;
         }
+
         public static MediaEnum Convert(string Type, MediaEnum Back = MediaEnum.Url)
         {
             foreach (MediaEnum Types in (MediaEnum[])System.Enum.GetValues(typeof(MediaEnum)))
