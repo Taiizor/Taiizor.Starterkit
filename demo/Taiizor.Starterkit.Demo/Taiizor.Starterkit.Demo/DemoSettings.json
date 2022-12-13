@@ -14,6 +14,11 @@
     "Direction": "rtl",
     "Version": "1.0.1",
     "SocialMedia": {
+      "YouTube": {
+        "Url": "https://www.youtube.com/@iTaiizor",
+        "Alt": "YouTube Address",
+        "Icon": "youtube"
+      },
       "GitHub": {
         "Url": "https://github.com/Taiizor",
         "Alt": "GitHub Address",
@@ -25,6 +30,7 @@
         "CacheControl": "public, max-age={0}",
         "MaxAge": "1.00:00:00",
         "Mode": "Compress",
+        "Change": true,
         "Extensions": [
           ".jpeg",
           ".css",
