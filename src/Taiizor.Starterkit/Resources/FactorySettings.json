@@ -30,6 +30,7 @@
                 "CacheControl": "public, max-age={0}",
                 "MaxAge": "1.00:00:00",
                 "Mode": "Compress",
+                "Change": true,
                 "Extensions": [
                     ".jpeg",
                     ".css",

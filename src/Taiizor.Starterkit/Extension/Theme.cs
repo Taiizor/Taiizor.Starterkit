@@ -3,7 +3,6 @@ using System.Globalization;
 using System.IO.Compression;
 using System.Reflection;
 using Taiizor.Starterkit.Enum;
-using Taiizor.Starterkit.Helper;
 using Taiizor.Starterkit.Interface;
 
 namespace Taiizor.Starterkit.Extension
@@ -360,21 +359,39 @@ namespace Taiizor.Starterkit.Extension
         }
 
         // Get the compression level gzip
-        public CompressionLevel GetCompressionLevelGzip()
+        public string GetCompressionLevelGzip()
         {
-            return Converter.Convert(ThemeSettings.Config.Compression.Level.Gzip, CompressionLevel.Optimal);
+            return ThemeSettings.Config.Compression.Level.Gzip;
+        }
+
+        // Get the compression level gzip type
+        public CompressionLevel GetCompressionLevelGzipType()
+        {
+            return ThemeSettings.Config.Compression.Level.GzipType;
         }
 
         // Get the compression level brotli
-        public CompressionLevel GetCompressionLevelBrotli()
+        public string GetCompressionLevelBrotli()
         {
-            return Converter.Convert(ThemeSettings.Config.Compression.Level.Brotli, CompressionLevel.Optimal);
+            return ThemeSettings.Config.Compression.Level.Brotli;
+        }
+
+        // Get the compression level brotli type
+        public CompressionLevel GetCompressionLevelBrotliType()
+        {
+            return ThemeSettings.Config.Compression.Level.BrotliType;
         }
 
         // Get the compression level deflate
-        public CompressionLevel GetCompressionLevelDeflate()
+        public string GetCompressionLevelDeflate()
         {
-            return Converter.Convert(ThemeSettings.Config.Compression.Level.Deflate, CompressionLevel.Optimal);
+            return ThemeSettings.Config.Compression.Level.Deflate;
+        }
+
+        // Get the compression level deflate type
+        public CompressionLevel GetCompressionLevelDeflateType()
+        {
+            return ThemeSettings.Config.Compression.Level.DeflateType;
         }
 
         // Get the compression response
@@ -402,15 +419,33 @@ namespace Taiizor.Starterkit.Extension
         }
 
         // Get the compression static file mode
-        public HttpsCompressionMode GetCompressionStaticFileMode()
+        public string GetCompressionStaticFileMode()
         {
-            return Converter.Convert(ThemeSettings.Config.Compression.StaticFile.Mode, HttpsCompressionMode.Compress);
+            return ThemeSettings.Config.Compression.StaticFile.Mode;
+        }
+
+        // Get the compression static file mode type
+        public HttpsCompressionMode GetCompressionStaticFileModeType()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.ModeType;
+        }
+
+        // Get the compression static file change
+        public bool GetCompressionStaticFileChange()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.Change;
         }
 
         // Get the compression static file max age
-        public TimeSpan GetCompressionStaticFileMaxAge()
+        public string GetCompressionStaticFileMaxAge()
         {
             return ThemeSettings.Config.Compression.StaticFile.MaxAge;
+        }
+
+        // Get the compression static file max age span
+        public TimeSpan GetCompressionStaticFileMaxAgeSpan()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.MaxAgeSpan;
         }
 
         // Get the compression static file max age second
@@ -435,6 +470,12 @@ namespace Taiizor.Starterkit.Extension
         public string GetCompressionStaticFileCacheControl()
         {
             return ThemeSettings.Config.Compression.StaticFile.CacheControl;
+        }
+
+        // Get the compression static cache control format
+        public string GetCompressionStaticFileCacheControlFormat()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.CacheControlFormat;
         }
 
         // Get the languages

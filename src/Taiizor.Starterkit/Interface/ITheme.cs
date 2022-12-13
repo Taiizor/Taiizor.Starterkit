@@ -90,11 +90,17 @@ namespace Taiizor.Starterkit.Interface
 
         ThemeCompressionLevel GetCompressionLevel();
 
-        CompressionLevel GetCompressionLevelGzip();
+        string GetCompressionLevelGzip();
 
-        CompressionLevel GetCompressionLevelBrotli();
+        CompressionLevel GetCompressionLevelGzipType();
 
-        CompressionLevel GetCompressionLevelDeflate();
+        string GetCompressionLevelBrotli();
+
+        CompressionLevel GetCompressionLevelBrotliType();
+
+        string GetCompressionLevelDeflate();
+
+        CompressionLevel GetCompressionLevelDeflateType();
 
         ThemeCompressionResponse GetCompressionResponse();
 
@@ -104,9 +110,15 @@ namespace Taiizor.Starterkit.Interface
 
         ThemeCompressionStaticFile GetCompressionStaticFile();
 
-        HttpsCompressionMode GetCompressionStaticFileMode();
+        string GetCompressionStaticFileMode();
 
-        TimeSpan GetCompressionStaticFileMaxAge();
+        HttpsCompressionMode GetCompressionStaticFileModeType();
+
+        bool GetCompressionStaticFileChange();
+
+        string GetCompressionStaticFileMaxAge();
+
+        TimeSpan GetCompressionStaticFileMaxAgeSpan();
 
         int GetCompressionStaticFileMaxAgeSecond();
 
@@ -115,6 +127,8 @@ namespace Taiizor.Starterkit.Interface
         string[] GetCompressionStaticFileExtensions();
 
         string GetCompressionStaticFileCacheControl();
+
+        string GetCompressionStaticFileCacheControlFormat();
 
         Dictionary<string, Dictionary<string, string>> GetLanguages();
 
