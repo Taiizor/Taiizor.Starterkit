@@ -9,6 +9,13 @@ namespace Taiizor.Starterkit.Demo
         {
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
+            // Set settings to the configuration
+            IConfiguration configuration = new ConfigurationBuilder()
+                .AddJsonFile("DemoSettings.json")
+                .Build();
+
+            ThemeSettings.Init(configuration, "Demo");
+
             // Add services to the container.
             builder.Services.AddRazorPages();
             builder.Services.AddServerSideBlazor();
@@ -17,17 +24,10 @@ namespace Taiizor.Starterkit.Demo
 
             WebApplication app = builder.Build();
 
-            // Set settings to the configuration
-            IConfiguration configuration = new ConfigurationBuilder()
-                .AddJsonFile("DemoSettings.json")
-                .Build();
-
-            ThemeSettings.Init(configuration, "Demo");
-
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler(ThemeSettings.Config.ExceptionHandler);
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
@@ -39,7 +39,7 @@ namespace Taiizor.Starterkit.Demo
             app.UseRouting();
 
             app.MapBlazorHub();
-            app.MapFallbackToPage("/_Host");
+            app.MapFallbackToPage(ThemeSettings.Config.MapFallbackPage);
 
             app.Run();
         }

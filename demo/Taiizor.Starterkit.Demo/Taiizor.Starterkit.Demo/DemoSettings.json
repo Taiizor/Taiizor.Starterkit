@@ -3,6 +3,8 @@
     "Domain": "https://www.vegalya.com/",
     "PartialsDir": "~/Shared/Partials",
     "LayoutDir": "~/Shared/Layout",
+    "ExceptionHandler": "/Error",
+    "MapFallbackPage": "/_Host",
     "LocaleSwitchEnabled": true,
     "ModeSwitchEnabled": true,
     "LocaleDefault": "en-GB",
@@ -16,6 +18,34 @@
         "Url": "https://github.com/Taiizor",
         "Alt": "GitHub Address",
         "Icon": "github"
+      }
+    },
+    "Compression": {
+      "StaticFile": {
+        "MaxAge": "1.00:00:00",
+        "Mode": "Compress",
+        "Extensions": [
+          ".css",
+          ".js",
+          ".jpg",
+          ".png",
+          ".svg"
+        ],
+        "Headers": [
+          "Cache-Control: public, max-age={0}",
+          "Vary: Accept-Encoding"
+        ]
+      },
+      "Response": {
+        "EnableHttps": true,
+        "MimeTypes": [
+          "*/*"
+        ]
+      },
+      "Level": {
+        "Deflate": "Optimal",
+        "Brotli": "Optimal",
+        "Gzip": "Optimal"
       }
     },
     "ThirdParty": {
