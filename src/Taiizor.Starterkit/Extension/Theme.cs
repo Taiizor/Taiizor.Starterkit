@@ -1,6 +1,9 @@
+using Microsoft.AspNetCore.Http.Features;
 using System.Globalization;
+using System.IO.Compression;
 using System.Reflection;
 using Taiizor.Starterkit.Enum;
+using Taiizor.Starterkit.Helper;
 using Taiizor.Starterkit.Interface;
 
 namespace Taiizor.Starterkit.Extension
@@ -110,6 +113,30 @@ namespace Taiizor.Starterkit.Extension
         public string GetDomain()
         {
             return ThemeSettings.Config.Domain;
+        }
+
+        // Set the exception handler to path
+        public void SetExceptionHandler(string flag)
+        {
+            ThemeSettings.Config.ExceptionHandler = flag;
+        }
+
+        // Get current exception handler
+        public string GetExceptionHandler()
+        {
+            return ThemeSettings.Config.ExceptionHandler;
+        }
+
+        // Set the map fallback page to page
+        public void SetMapFallbackPage(string flag)
+        {
+            ThemeSettings.Config.MapFallbackPage = flag;
+        }
+
+        // Get current map fallback page
+        public string GetMapFallbackPage()
+        {
+            return ThemeSettings.Config.MapFallbackPage;
         }
 
         // Set the version
@@ -318,6 +345,84 @@ namespace Taiizor.Starterkit.Extension
             }
 
             return "";
+        }
+
+        // Get the compression
+        public ThemeCompression GetCompression()
+        {
+            return ThemeSettings.Config.Compression;
+        }
+
+        // Get the compression level
+        public ThemeCompressionLevel GetCompressionLevel()
+        {
+            return ThemeSettings.Config.Compression.Level;
+        }
+
+        // Get the compression level gzip
+        public CompressionLevel GetCompressionLevelGzip()
+        {
+            return Converter.Convert(ThemeSettings.Config.Compression.Level.Gzip, CompressionLevel.Optimal);
+        }
+
+        // Get the compression level brotli
+        public CompressionLevel GetCompressionLevelBrotli()
+        {
+            return Converter.Convert(ThemeSettings.Config.Compression.Level.Brotli, CompressionLevel.Optimal);
+        }
+
+        // Get the compression level deflate
+        public CompressionLevel GetCompressionLevelDeflate()
+        {
+            return Converter.Convert(ThemeSettings.Config.Compression.Level.Deflate, CompressionLevel.Optimal);
+        }
+
+        // Get the compression response
+        public ThemeCompressionResponse GetCompressionResponse()
+        {
+            return ThemeSettings.Config.Compression.Response;
+        }
+
+        // Get the compression response enable https
+        public bool GetCompressionResponseEnableHttps()
+        {
+            return ThemeSettings.Config.Compression.Response.EnableHttps;
+        }
+
+        // Get the compression response mime types
+        public string[] GetCompressionResponseMimeTypes()
+        {
+            return ThemeSettings.Config.Compression.Response.MimeTypes;
+        }
+
+        // Get the compression static file
+        public ThemeCompressionStaticFile GetCompressionStaticFile()
+        {
+            return ThemeSettings.Config.Compression.StaticFile;
+        }
+
+        // Get the compression static file mode
+        public HttpsCompressionMode GetCompressionStaticFileMode()
+        {
+            return Converter.Convert(ThemeSettings.Config.Compression.StaticFile.Mode, HttpsCompressionMode.Compress);
+        }
+
+        // Get the compression static file max age
+        public TimeSpan GetCompressionStaticFileMaxAge()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.MaxAge;
+        }
+
+        // Get the compression static file headers
+        public string[] GetCompressionStaticFileHeaders()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.Headers;
+        }
+
+        // Get the compression static file extensions
+        public string[] GetCompressionStaticFileExtensions()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.Extensions;
         }
 
         // Get the languages

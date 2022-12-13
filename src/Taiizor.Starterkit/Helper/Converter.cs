@@ -1,4 +1,6 @@
-﻿using Taiizor.Starterkit.Enum;
+﻿using Microsoft.AspNetCore.Http.Features;
+using System.IO.Compression;
+using Taiizor.Starterkit.Enum;
 
 namespace Taiizor.Starterkit.Helper
 {
@@ -33,6 +35,32 @@ namespace Taiizor.Starterkit.Helper
         public static DirectionEnum Convert(string Type, DirectionEnum Back = DirectionEnum.LTR)
         {
             foreach (DirectionEnum Types in (DirectionEnum[])System.Enum.GetValues(typeof(DirectionEnum)))
+            {
+                if (Check(Type, Types))
+                {
+                    return Types;
+                }
+            }
+
+            return Back;
+        }
+
+        public static CompressionLevel Convert(string Type, CompressionLevel Back = CompressionLevel.Optimal)
+        {
+            foreach (CompressionLevel Types in (CompressionLevel[])System.Enum.GetValues(typeof(CompressionLevel)))
+            {
+                if (Check(Type, Types))
+                {
+                    return Types;
+                }
+            }
+
+            return Back;
+        }
+
+        public static HttpsCompressionMode Convert(string Type, HttpsCompressionMode Back = HttpsCompressionMode.Compress)
+        {
+            foreach (HttpsCompressionMode Types in (HttpsCompressionMode[])System.Enum.GetValues(typeof(HttpsCompressionMode)))
             {
                 if (Check(Type, Types))
                 {

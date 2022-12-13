@@ -27,11 +27,17 @@ namespace Taiizor.Starterkit.Extension
 
         public bool ModeSwitchEnabled { get; set; }
 
+        public string MapFallbackPage { get; set; }
+
+        public string ExceptionHandler { get; set; }
+
         public bool LocaleSwitchEnabled { get; set; }
 
         public ThemeLanguages Languages { get; set; }
 
         public ThemeThirdParty ThirdParty { get; set; }
+
+        public ThemeCompression Compression { get; set; }
 
         public ThemeSocialMedia SocialMedia { get; set; }
 

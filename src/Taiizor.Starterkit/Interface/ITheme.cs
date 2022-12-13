@@ -1,4 +1,7 @@
+using Microsoft.AspNetCore.Http.Features;
+using System.IO.Compression;
 using Taiizor.Starterkit.Enum;
+using Taiizor.Starterkit.Extension;
 
 namespace Taiizor.Starterkit.Interface
 {
@@ -18,6 +21,14 @@ namespace Taiizor.Starterkit.Interface
         void SetDomain(string flag);
 
         string GetDomain();
+
+        void SetExceptionHandler(string flag);
+
+        string GetExceptionHandler();
+
+        void SetMapFallbackPage(string flag);
+
+        string GetMapFallbackPage();
 
         void SetVersion(string flag);
 
@@ -74,6 +85,32 @@ namespace Taiizor.Starterkit.Interface
         Dictionary<string, Dictionary<string, string>> GetSocialMedias();
 
         string GetSocialMedia(string name, MediaEnum type);
+
+        ThemeCompression GetCompression();
+
+        ThemeCompressionLevel GetCompressionLevel();
+
+        CompressionLevel GetCompressionLevelGzip();
+
+        CompressionLevel GetCompressionLevelBrotli();
+
+        CompressionLevel GetCompressionLevelDeflate();
+
+        ThemeCompressionResponse GetCompressionResponse();
+
+        bool GetCompressionResponseEnableHttps();
+
+        string[] GetCompressionResponseMimeTypes();
+
+        ThemeCompressionStaticFile GetCompressionStaticFile();
+
+        HttpsCompressionMode GetCompressionStaticFileMode();
+
+        TimeSpan GetCompressionStaticFileMaxAge();
+
+        string[] GetCompressionStaticFileHeaders();
+
+        string[] GetCompressionStaticFileExtensions();
 
         Dictionary<string, Dictionary<string, string>> GetLanguages();
 
