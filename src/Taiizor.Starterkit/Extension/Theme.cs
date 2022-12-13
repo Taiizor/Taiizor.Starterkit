@@ -413,8 +413,14 @@ namespace Taiizor.Starterkit.Extension
             return ThemeSettings.Config.Compression.StaticFile.MaxAge;
         }
 
+        // Get the compression static file max age second
+        public int GetCompressionStaticFileMaxAgeSecond()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.MaxAgeSecond;
+        }
+
         // Get the compression static file headers
-        public string[] GetCompressionStaticFileHeaders()
+        public Dictionary<string, string> GetCompressionStaticFileHeaders()
         {
             return ThemeSettings.Config.Compression.StaticFile.Headers;
         }
@@ -423,6 +429,12 @@ namespace Taiizor.Starterkit.Extension
         public string[] GetCompressionStaticFileExtensions()
         {
             return ThemeSettings.Config.Compression.StaticFile.Extensions;
+        }
+
+        // Get the compression static cache control
+        public string GetCompressionStaticFileCacheControl()
+        {
+            return ThemeSettings.Config.Compression.StaticFile.CacheControl;
         }
 
         // Get the languages

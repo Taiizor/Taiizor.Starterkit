@@ -108,9 +108,13 @@ namespace Taiizor.Starterkit.Interface
 
         TimeSpan GetCompressionStaticFileMaxAge();
 
-        string[] GetCompressionStaticFileHeaders();
+        int GetCompressionStaticFileMaxAgeSecond();
+
+        Dictionary<string, string> GetCompressionStaticFileHeaders();
 
         string[] GetCompressionStaticFileExtensions();
+
+        string GetCompressionStaticFileCacheControl();
 
         Dictionary<string, Dictionary<string, string>> GetLanguages();
 
