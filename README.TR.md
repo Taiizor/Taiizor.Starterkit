@@ -10,7 +10,7 @@
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
 # Taiizor.Starterkit'e Hoşgeldiniz
-Taiizor.Starterkit, .NET Blazor kullanan projeler için başlangıç seti kitaplığıdır. Sunduğu çeşitli fonksiyonlarla kolaylık sağlar.
+Taiizor.Starterkit, Blazor projelerini geliştirmeye yardımcı olacak araçlar ve kaynaklar topluluğudur. Kullanımı kolay ve çok karmaşık veya kaynak yoğun olmayan hafif bir yapıya sahip olması amaçlanmıştır. Blazor'a yeni olan veya yeni bir projeyi hızlı bir şekilde kurmak isteyen geliştiriciler için faydalı olabilir, çünkü bunun için çok zaman ayırmak zorunda kalmayacaklardır.
 
 ## Katkıda Bulunanlar
 

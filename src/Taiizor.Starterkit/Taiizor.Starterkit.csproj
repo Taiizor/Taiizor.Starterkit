@@ -13,24 +13,22 @@
 
     <PropertyGroup>
         <ApplicationIcon>Resources\Taiizor.Starterkit.ico</ApplicationIcon>
-        <Version>1.1.1.7</Version>
+        <Version>1.1.1.8</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Taiizor.Starterkit</Title>
         <PackageId>Taiizor.Starterkit</PackageId>
         <Authors>Taiizor</Authors>
         <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
-        <Summary>Starterkit library for projects using .NET Blazor</Summary>
-        <Description>$(Summary)
-.NET Blazor Starterkit Library - $(PackageId)
-        </Description>
+        <Summary>A lightweight .NET Starterkit library to Blazor projects.</Summary>
+        <Description>Starterkit is a collection of tools and resources that can help with developing Blazor projects. It is designed to be lightweight, easy to use, and not too complicated or resource-intensive. It can be useful for developers who are new to Blazor or who want to quickly set up a new project without having to spend a lot of time configuring everything from scratch.</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageLicenseExpression></PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
         <PackageReleaseNotes>Code improvements have been made.
 Changes are detailed at https://github.com/Taiizor/Taiizor.Starterkit/releases
         </PackageReleaseNotes>
-        <PackageTags>ReaL Taiizor Soferity Vegalya Starterkit C# CSharp VBC VB VisualBasic DotNET .NET NET Starter Kit Library Blazor Razor Asp Asp.NET</PackageTags>
+        <PackageTags>ReaL Taiizor Soferity Vegalya Starterkit C# CSharp VBC VB VisualBasic DotNET .NET NET Starter Kit Lightweight Library Blazor Razor Asp Asp.NET</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <!--<DocumentationFile>..\$(Title)\bin$(OutputPath)\$(Configuration)\$(TargetFramework)\$(Title).xml</DocumentationFile>-->
         <PackageProjectUrl>https://github.com/Taiizor/Taiizor.Starterkit</PackageProjectUrl>

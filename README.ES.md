@@ -10,7 +10,7 @@
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
 # Bienvenido a Taiizor.Starterkit
-Taiizor.Starterkit es una biblioteca de kit de inicio para proyectos que utilizan .NET Blazor. Proporciona comodidad con varias funciones que ofrece.
+Taiizor.Starterkit es una colección de herramientas y recursos que pueden ayudar a desarrollar proyectos de Blazor. Está diseñado para ser ligero, fácil de usar y no demasiado complicado o intensivo en recursos. Puede ser útil para desarrolladores que son nuevos en Blazor o que quieren configurar rápidamente un nuevo proyecto sin tener que pasar mucho tiempo configurando todo desde cero.
 
 ## Colaboradores
 
