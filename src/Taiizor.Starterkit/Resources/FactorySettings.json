@@ -8,6 +8,7 @@
         "LocaleSwitchEnabled": true,
         "ModeSwitchEnabled": true,
         "LocaleDefault": "en-GB",
+        "SvgDir": "media/icons/",
         "ModeDefault": "system",
         "AssetsDir": "assets/",
         "PagesDir": "~/Pages",
