@@ -79,6 +79,7 @@
     "Assets": {
       "Favicon": "favicon.png",
       "Manifest": "manifest.json",
+      "Version": true,
       "Font": [
         "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"
       ],

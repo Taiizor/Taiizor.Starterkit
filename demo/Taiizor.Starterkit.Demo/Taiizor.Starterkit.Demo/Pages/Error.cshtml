@@ -3,9 +3,12 @@
 
 @using Taiizor.Starterkit.Enum
 @using Taiizor.Starterkit.Interface
+@using Microsoft.AspNetCore.Components
 
 @inject ITheme Theme
 @inject IBootstrapBase BootstrapBase
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @{
     BootstrapBase.Init(Theme);
@@ -22,7 +25,7 @@
 
     @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Css))
     {
-        <link rel="stylesheet" type="text/css" href="@file" asp-append-version="true" />
+        <link rel="stylesheet" type="text/css" href="@file" asp-append-version="@Theme.GetAssetVersion()" />
     }
 </head>
 

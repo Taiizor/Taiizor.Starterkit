@@ -10,11 +10,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AnalysisLevel>preview</AnalysisLevel>
     <LangVersion>preview</LangVersion>
-    <Nullable>disable</Nullable>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Taiizor.Starterkit" Version="1.1.1.8" />
+    <PackageReference Include="Taiizor.Starterkit" Version="1.1.1.9" />
   </ItemGroup>
 
 </Project>

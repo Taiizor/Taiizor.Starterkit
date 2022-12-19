@@ -34,6 +34,10 @@ namespace Taiizor.Starterkit.Interface
 
         string GetVersion();
 
+        void SetAssetVersion(bool flag);
+
+        bool GetAssetVersion();
+
         void SetUri(string flag);
 
         string GetUri();

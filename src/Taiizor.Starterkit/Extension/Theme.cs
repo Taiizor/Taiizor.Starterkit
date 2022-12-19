@@ -156,6 +156,18 @@ namespace Taiizor.Starterkit.Extension
             return ThemeSettings.Config.Version;
         }
 
+        // Set the assets version
+        public void SetAssetVersion(bool flag)
+        {
+            ThemeSettings.Config.Assets.Version = flag;
+        }
+
+        // Get current assets version
+        public bool GetAssetVersion()
+        {
+            return ThemeSettings.Config.Assets.Version;
+        }
+
         // Set the domain to uri
         public void SetUri(string flag)
         {

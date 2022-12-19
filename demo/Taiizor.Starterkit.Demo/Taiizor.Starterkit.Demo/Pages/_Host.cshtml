@@ -25,33 +25,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 
-    <link rel="icon" type="image/png" href="@Theme.GetFavicon()" />
+    <link rel="icon" type="image/png" href="@Theme.GetFavicon()" asp-append-version="@Theme.GetAssetVersion()" />
     
     <!--begin::Global Fonts(mandatory)-->
     @foreach (string font in Theme.GetGlobalAssets(TypeEnum.Font))
     {
-        <link rel="stylesheet" href="@font" />
+        <link rel="stylesheet" href="@font" asp-append-version="@Theme.GetAssetVersion()" />
     }
     <!--end::Global Fonts-->
     
     <!--begin::Vendor Fonts(optional)-->
     @foreach (string font in Theme.GetVendors(TypeEnum.Font))
     {
-        <link rel="stylesheet" href="@font" />
+        <link rel="stylesheet" href="@font" asp-append-version="@Theme.GetAssetVersion()" />
     }
     <!--end::Vendor Fonts-->
     
     <!--begin::Global Stylesheets(mandatory)-->
     @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Css))
     {
-        <link rel="stylesheet" type="text/css" href="@file" />
+        <link rel="stylesheet" type="text/css" href="@file" asp-append-version="@Theme.GetAssetVersion()" />
     }
     <!--end::Global Stylesheets-->
     
     <!--begin::Vendor Stylesheets(optional)-->
     @foreach (string file in Theme.GetVendors(TypeEnum.Css))
     {
-        <link rel="stylesheet" type="text/css" href="@file" />
+        <link rel="stylesheet" type="text/css" href="@file" asp-append-version="@Theme.GetAssetVersion()" />
     }
     <!--end::Vendor Stylesheets-->
 </head>
@@ -72,14 +72,14 @@
     <!--begin::Global Javascript(mandatory)-->
     @foreach (string file in Theme.GetGlobalAssets(TypeEnum.Js))
     {
-        <script src="@file"></script>
+        <script src="@file" asp-append-version="@Theme.GetAssetVersion()"></script>
     }
     <!--end::Global Javascript-->
     
     <!--begin::Vendors Javascript(optional)-->
     @foreach (string file in Theme.GetVendors(TypeEnum.Js))
     {
-        <script src="@file"></script>
+        <script src="@file" asp-append-version="@Theme.GetAssetVersion()"></script>
     }
     <!--end::Vendors Javascript-->
     
