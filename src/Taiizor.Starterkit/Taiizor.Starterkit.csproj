@@ -72,7 +72,7 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Starterkit/releases
             <PackagePath></PackagePath>
         </None>
         <Content Update="Resources\FactorySettings.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 
