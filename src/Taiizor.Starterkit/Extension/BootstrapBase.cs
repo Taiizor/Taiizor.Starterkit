@@ -1,8 +1,7 @@
-using Taiizor.Starterkit.Extension;
 using Taiizor.Starterkit.Helper;
 using Taiizor.Starterkit.Interface;
 
-namespace Taiizor.Starterkit
+namespace Taiizor.Starterkit.Extension
 {
     public class BootstrapBase : IBootstrapBase
     {
