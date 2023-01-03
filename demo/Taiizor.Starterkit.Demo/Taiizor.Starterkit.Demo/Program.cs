@@ -10,11 +10,12 @@ namespace Taiizor.Starterkit.Demo
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
             // Set settings to the configuration
-            IConfiguration configuration = new ConfigurationBuilder()
-                .AddJsonFile("DemoSettings.json")
-                .Build();
+            //IConfiguration configuration = new ConfigurationBuilder()
+            //    .AddJsonFile("DemoSettings.json")
+            //    .Build();
 
-            ThemeSettings.Init(configuration, "Demo");
+            //ThemeSettings.Init(configuration, "Demo");
+            ThemeSettings.Init("DemoSettings.json", "Demo");
 
             // Add services to the container.
             builder.Services.AddRazorPages();
