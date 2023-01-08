@@ -7,6 +7,10 @@
 [![FuGet-Version](https://www.fuget.org/packages/Taiizor.Starterkit/badge.svg?label=FuGet)](https://www.fuget.org/packages/Taiizor.Starterkit)
 [![NuGet-Download](https://img.shields.io/nuget/dt/Taiizor.Starterkit?label=Download)](https://www.nuget.org/api/v2/package/Taiizor.Starterkit)
 
+[![.NET](https://github.com/Taiizor/Taiizor.Starterkit/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Taiizor/Taiizor.Starterkit/actions/workflows/dotnet.yml)
+[![CodeQL](https://github.com/Taiizor/Taiizor.Starterkit/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/Taiizor/Taiizor.Starterkit/actions/workflows/codeql-analysis.yml)
+[![.NET Desktop](https://github.com/Taiizor/Taiizor.Starterkit/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/Taiizor/Taiizor.Starterkit/actions/workflows/dotnet-desktop.yml)
+
 [![Discord-Server](https://img.shields.io/discord/932386235538878534?label=Discord)](https://discord.gg/nxG977byXb)
 
 # Welcome to Taiizor.Starterkit
