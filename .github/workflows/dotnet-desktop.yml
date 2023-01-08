@@ -18,7 +18,8 @@ jobs:
             Release
         ]
         solution: [
-            src/Taiizor.Starterkit.sln
+            src/Taiizor.Starterkit.sln,
+            demo/Taiizor.Starterkit.Demo/Taiizor.Starterkit.Demo.sln
         ]
 
     steps:
