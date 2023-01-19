@@ -4,6 +4,7 @@
     {
         Url,
         Alt,
-        Icon
+        Icon,
+        Line
     }
 }

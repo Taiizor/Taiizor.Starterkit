@@ -341,8 +341,9 @@ namespace Taiizor.Starterkit.Extension
                         result.TryGetValue("Url", out string url);
                         result.TryGetValue("Alt", out string alt);
                         result.TryGetValue("Icon", out string icon);
+                        result.TryGetValue("Line", out string line);
 
-                        list.Add(properties.Name, new() { { "Url", url }, { "Alt", alt }, { "Icon", icon } });
+                        list.Add(properties.Name, new() { { "Url", url }, { "Alt", alt }, { "Icon", icon }, { "Line", line } });
                     }
                 }
             }

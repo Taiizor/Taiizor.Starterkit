@@ -18,12 +18,14 @@
             "YouTube": {
                 "Url": "https://www.youtube.com/@iTaiizor",
                 "Alt": "YouTube Address",
-                "Icon": "youtube"
+                "Icon": "youtube",
+                "Line": "<a href='https://www.youtube.com/@iTaiizor'><img src='youtube.svg' alt='YouTube Address' /></a>"
             },
             "GitHub": {
                 "Url": "https://github.com/Taiizor",
                 "Alt": "GitHub Address",
-                "Icon": "github"
+                "Icon": "github",
+                "Line": "<a href='https://github.com/Taiizor'><img src='github.svg' alt='GitHub Address' /></a>"
             }
         },
         "Compression": {
