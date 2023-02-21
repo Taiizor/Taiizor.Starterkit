@@ -4,7 +4,7 @@
         <GenerateResourceUsePreserializedResources>true</GenerateResourceUsePreserializedResources>
         <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
         <AddRazorSupportForMvc>false</AddRazorSupportForMvc>
-        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
         <RootNamespace>Taiizor.Starterkit</RootNamespace>
         <DefaultLanguage>en-GB</DefaultLanguage>
         <ImplicitUsings>enable</ImplicitUsings>
