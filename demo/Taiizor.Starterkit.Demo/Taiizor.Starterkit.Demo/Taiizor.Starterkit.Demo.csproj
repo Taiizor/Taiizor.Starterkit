@@ -4,7 +4,7 @@
     <UseRazorSourceGenerator>true</UseRazorSourceGenerator>
     <RootNamespace>Taiizor.Starterkit.Demo</RootNamespace>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <RazorLangVersion>7.0</RazorLangVersion>
     <DefaultLanguage>en-GB</DefaultLanguage>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Taiizor.Starterkit" Version="1.1.2.4" />
+    <PackageReference Include="Taiizor.Starterkit" Version="1.1.2.5" />
   </ItemGroup>
 
 </Project>
