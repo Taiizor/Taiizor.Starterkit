@@ -159,6 +159,8 @@ namespace Taiizor.Starterkit.Extension
         // Get current version
         public string GetVersion()
         {
+            _version = new(ThemeSettings.Config.Major, ThemeSettings.Config.Minor, ThemeSettings.Config.Build);
+
             return _version.ToString();
         }
 
