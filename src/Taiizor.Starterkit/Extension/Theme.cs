@@ -13,6 +13,8 @@ namespace Taiizor.Starterkit.Extension
         // Theme variables
         private string _modeDefault = "system";
 
+        private Version _version = new(0, 1, 0);
+
         private string _localeDefault = "en-GB";
 
         private bool _modeSwitchEnabled = true;
@@ -147,13 +149,17 @@ namespace Taiizor.Starterkit.Extension
         // Set the version
         public void SetVersion(string flag)
         {
-            ThemeSettings.Config.Version = flag;
+            _version = Version.Parse(flag);
+
+            ThemeSettings.Config.Major = _version.Major;
+            ThemeSettings.Config.Major = _version.Minor;
+            ThemeSettings.Config.Major = _version.Build;
         }
 
         // Get current version
         public string GetVersion()
         {
-            return ThemeSettings.Config.Version;
+            return _version.ToString();
         }
 
         // Set the assets version

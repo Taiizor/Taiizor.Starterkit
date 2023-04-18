@@ -3,13 +3,17 @@ namespace Taiizor.Starterkit.Extension
     // Base type class for theme settings
     public class ThemeBase
     {
+        public int Major { get; set; }
+
+        public int Minor { get; set; }
+
+        public int Build { get; set; }
+
         public string Uri { get; set; }
 
         public string Domain { get; set; }
 
         public string SvgDir { get; set; }
-
-        public string Version { get; set; }
 
         public string PagesDir { get; set; }
 
