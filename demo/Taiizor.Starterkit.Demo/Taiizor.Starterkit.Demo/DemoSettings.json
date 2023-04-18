@@ -13,7 +13,9 @@
     "AssetsDir": "assets/",
     "PagesDir": "~/Pages",
     "Direction": "rtl",
-    "Version": "1.0.1",
+    "Major": 1,
+    "Minor": 0,
+    "Build": 1,
     "SocialMedia": {
       "YouTube": {
         "Url": "https://www.youtube.com/@iTaiizor",

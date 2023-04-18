@@ -152,8 +152,8 @@ namespace Taiizor.Starterkit.Extension
             _version = Version.Parse(flag);
 
             ThemeSettings.Config.Major = _version.Major;
-            ThemeSettings.Config.Major = _version.Minor;
-            ThemeSettings.Config.Major = _version.Build;
+            ThemeSettings.Config.Minor = _version.Minor;
+            ThemeSettings.Config.Build = _version.Build;
         }
 
         // Get current version
