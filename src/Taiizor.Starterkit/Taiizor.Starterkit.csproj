@@ -22,6 +22,7 @@
         <Copyright>Copyright © $([System.DateTime]::Today.ToString(yyyy)) $(Authors)</Copyright>
         <Summary>A lightweight .NET Starterkit library to Blazor projects.</Summary>
         <Description>Starterkit is a collection of tools and resources that can help with developing Blazor projects. It is designed to be lightweight, easy to use, and not too complicated or resource-intensive. It can be useful for developers who are new to Blazor or who want to quickly set up a new project without having to spend a lot of time configuring everything from scratch.</Description>
+        <PackageReadmeFile>README.MD</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageLicenseExpression></PackageLicenseExpression>
         <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -63,6 +64,10 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Starterkit/releases
     </ItemGroup>
 
     <ItemGroup>
+        <None Include="..\README.MD">
+            <Pack>True</Pack>
+            <PackagePath></PackagePath>
+        </None>
         <None Include="..\..\LICENSE">
             <Pack>True</Pack>
             <PackagePath></PackagePath>

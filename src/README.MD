@@ -1,0 +1,3 @@
+A lightweight .NET Starterkit library to Blazor projects.
+
+Starterkit is a collection of tools and resources that can help with developing Blazor projects. It is designed to be lightweight, easy to use, and not too complicated or resource-intensive. It can be useful for developers who are new to Blazor or who want to quickly set up a new project without having to spend a lot of time configuring everything from scratch.

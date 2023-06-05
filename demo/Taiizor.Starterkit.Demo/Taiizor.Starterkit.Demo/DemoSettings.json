@@ -13,6 +13,7 @@
     "AssetsDir": "assets/",
     "PagesDir": "~/Pages",
     "Direction": "rtl",
+    "Preloader": true,
     "Major": 1,
     "Minor": 0,
     "Build": 1,

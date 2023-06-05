@@ -110,6 +110,18 @@ namespace Taiizor.Starterkit.Extension
             return $"<span class=\"{classNames}\">{svg}</span>";
         }
 
+        // Set preloader option from settings
+        public void SetPreloader(bool flag)
+        {
+            ThemeSettings.Config.Preloader = flag;
+        }
+
+        // Get preloader option from settings
+        public bool GetPreloader()
+        {
+            return ThemeSettings.Config.Preloader;
+        }
+
         // Set the domain to baseuri
         public void SetDomain(string flag)
         {

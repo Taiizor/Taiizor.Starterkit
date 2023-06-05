@@ -15,6 +15,8 @@ namespace Taiizor.Starterkit.Extension
 
         public string SvgDir { get; set; }
 
+        public bool Preloader { get; set; }
+
         public string PagesDir { get; set; }
 
         public string AssetsDir { get; set; }
