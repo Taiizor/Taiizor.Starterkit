@@ -1,113 +1,114 @@
 {
-  "Demo": {
-    "Domain": "https://www.vegalya.com/",
-    "PartialsDir": "~/Shared/Partials",
-    "LayoutDir": "~/Shared/Layout",
-    "ExceptionHandler": "/Error",
-    "MapFallbackPage": "/_Host",
-    "LocaleSwitchEnabled": true,
-    "ModeSwitchEnabled": true,
-    "LocaleDefault": "en-GB",
-    "SvgDir": "media/icons/",
-    "ModeDefault": "system",
-    "AssetsDir": "assets/",
-    "PagesDir": "~/Pages",
-    "Direction": "rtl",
-    "Preloader": true,
-    "Major": 1,
-    "Minor": 0,
-    "Build": 1,
-    "SocialMedia": {
-      "YouTube": {
-        "Url": "https://www.youtube.com/@iTaiizor",
-        "Alt": "YouTube Address",
-        "Icon": "youtube",
-        "Line": "<a href='https://www.youtube.com/@iTaiizor'><img src='youtube.svg' alt='YouTube Address' /></a>"
-      },
-      "GitHub": {
-        "Url": "https://github.com/Taiizor",
-        "Alt": "GitHub Address",
-        "Icon": "github",
-        "Line": "<a href='https://github.com/Taiizor'><img src='github.svg' alt='GitHub Address' /></a>"
-      }
-    },
-    "Compression": {
-      "StaticFile": {
-        "CacheControl": "public, max-age={0}",
-        "MaxAge": "1.00:00:00",
-        "Mode": "Compress",
-        "Change": true,
-        "Extensions": [
-          ".jpeg",
-          ".css",
-          ".svg",
-          ".png",
-          ".jpg",
-          ".js"
-        ],
-        "Headers": {
-          "Vary": "Accept-Encoding"
+    "Demo": {
+        "Domain": "https://www.vegalya.com/",
+        "PartialsDir": "~/Shared/Partials",
+        "LayoutDir": "~/Shared/Layout",
+        "ExceptionHandler": "/Error",
+        "MapFallbackPage": "/_Host",
+        "LocaleSwitchEnabled": true,
+        "ModeSwitchEnabled": true,
+        "LocaleDefault": "en-GB",
+        "SvgDir": "media/icons/",
+        "ModeDefault": "system",
+        "AssetsDir": "assets/",
+        "PagesDir": "~/Pages",
+        "IconType": "solid",
+        "Direction": "rtl",
+        "Preloader": true,
+        "Major": 1,
+        "Minor": 0,
+        "Build": 1,
+        "SocialMedia": {
+            "YouTube": {
+                "Url": "https://www.youtube.com/@iTaiizor",
+                "Alt": "YouTube Address",
+                "Icon": "youtube",
+                "Line": "<a href='https://www.youtube.com/@iTaiizor'><img src='youtube.svg' alt='YouTube Address' /></a>"
+            },
+            "GitHub": {
+                "Url": "https://github.com/Taiizor",
+                "Alt": "GitHub Address",
+                "Icon": "github",
+                "Line": "<a href='https://github.com/Taiizor'><img src='github.svg' alt='GitHub Address' /></a>"
+            }
+        },
+        "Compression": {
+            "StaticFile": {
+                "CacheControl": "public, max-age={0}",
+                "MaxAge": "1.00:00:00",
+                "Mode": "Compress",
+                "Change": true,
+                "Extensions": [
+                    ".jpeg",
+                    ".css",
+                    ".svg",
+                    ".png",
+                    ".jpg",
+                    ".js"
+                ],
+                "Headers": {
+                    "Vary": "Accept-Encoding"
+                }
+            },
+            "Response": {
+                "EnableHttps": true,
+                "MimeTypes": [
+                    "*/*"
+                ]
+            },
+            "Level": {
+                "Deflate": "Optimal",
+                "Brotli": "Optimal",
+                "Gzip": "Optimal"
+            }
+        },
+        "ThirdParty": {
+            "GoogleAnalytics": "NULL",
+            "GoogleAdsense": "NULL",
+            "YandexMetrika": "NULL"
+        },
+        "Languages": {
+            "DefaultFlag": "european-union",
+            "CookieName": "Factorial",
+            "UnknownName": "Unknown",
+            "UnknownLang": "xy-XY",
+            "CookieExpires": 30,
+            "ActiveLang": [
+                "en-GB"
+            ],
+            "List": {
+                "English": {
+                    "en-GB": "united-kingdom"
+                }
+            }
+        },
+        "Assets": {
+            "Favicon": "favicon.png",
+            "Manifest": "manifest.json",
+            "Version": true,
+            "Font": [
+                "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"
+            ],
+            "Css": [
+                "css/bootstrap/bootstrap.min.css",
+                "css/site.css"
+            ],
+            "Js": [
+                "js/jquery.min.js"
+            ]
+        },
+        "Vendors": {
+            "special-library": {
+                "Font": [
+                    "plugins/custom/special-library/special-library.ttf"
+                ],
+                "Css": [
+                    "plugins/custom/special-library/special-library.css"
+                ],
+                "Js": [
+                    "plugins/custom/special-library/special-library.js"
+                ]
+            }
         }
-      },
-      "Response": {
-        "EnableHttps": true,
-        "MimeTypes": [
-          "*/*"
-        ]
-      },
-      "Level": {
-        "Deflate": "Optimal",
-        "Brotli": "Optimal",
-        "Gzip": "Optimal"
-      }
-    },
-    "ThirdParty": {
-      "GoogleAnalytics": "NULL",
-      "GoogleAdsense": "NULL",
-      "YandexMetrika": "NULL"
-    },
-    "Languages": {
-      "DefaultFlag": "european-union",
-      "CookieName": "Factorial",
-      "UnknownName": "Unknown",
-      "UnknownLang": "xy-XY",
-      "CookieExpires": 30,
-      "ActiveLang": [
-        "en-GB"
-      ],
-      "List": {
-        "English": {
-          "en-GB": "united-kingdom"
-        }
-      }
-    },
-    "Assets": {
-      "Favicon": "favicon.png",
-      "Manifest": "manifest.json",
-      "Version": true,
-      "Font": [
-        "https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,800,900"
-      ],
-      "Css": [
-        "css/bootstrap/bootstrap.min.css",
-        "css/site.css"
-      ],
-      "Js": [
-        "js/jquery.min.js"
-      ]
-    },
-    "Vendors": {
-      "special-library": {
-        "Font": [
-          "plugins/custom/special-library/special-library.ttf"
-        ],
-        "Css": [
-          "plugins/custom/special-library/special-library.css"
-        ],
-        "Js": [
-          "plugins/custom/special-library/special-library.js"
-        ]
-      }
     }
-  }
 }

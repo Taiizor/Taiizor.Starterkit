@@ -110,6 +110,44 @@ namespace Taiizor.Starterkit.Extension
             return $"<span class=\"{classNames}\">{svg}</span>";
         }
 
+        // Get icon content
+        public string GetIcon(string iconName, string iconClass = "", string iconType = "")
+        {
+            string tag = "i";
+            string output = "";
+            string iconsFinalClass = iconClass == "" ? "" : " " + iconClass;
+
+            if (string.IsNullOrEmpty(iconType) && !string.IsNullOrEmpty(ThemeSettings.Config.IconsType))
+            {
+                iconType = ThemeSettings.Config.IconsType;
+            }
+
+            if (string.IsNullOrEmpty(iconType))
+            {
+                iconType = "duotone";
+            }
+
+            if (iconType == "duotone")
+            {
+                int paths = ThemeIcons.Config.TryGetValue(iconName, out int number) ? number : 0;
+
+                output += $"<{tag} class='ki-{iconType} ki-{iconName}{iconsFinalClass}'>";
+
+                for (int i = 0; i < paths; i++)
+                {
+                    output += $"<span class='path{i + 1}'></span>";
+                }
+
+                output += $"</{tag}>";
+            }
+            else
+            {
+                output = $"<{tag} class='ki-{iconType} ki-{iconName}{iconsFinalClass}'></{tag}>";
+            }
+
+            return output;
+        }
+
         // Set preloader option from settings
         public void SetPreloader(bool flag)
         {

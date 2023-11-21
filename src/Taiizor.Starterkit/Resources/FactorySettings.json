@@ -12,6 +12,7 @@
         "ModeDefault": "system",
         "AssetsDir": "assets/",
         "PagesDir": "~/Pages",
+        "IconType": "solid",
         "Direction": "ltr",
         "Preloader": true,
         "Major": 0,

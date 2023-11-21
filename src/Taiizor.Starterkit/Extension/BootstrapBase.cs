@@ -1,3 +1,4 @@
+using Taiizor.Starterkit.Enum;
 using Taiizor.Starterkit.Helper;
 using Taiizor.Starterkit.Interface;
 
@@ -63,7 +64,7 @@ namespace Taiizor.Starterkit.Extension
         // Init theme direction option (RTL or LTR) from settings
         public void InitThemeDirection()
         {
-            _theme.SetDirection(Converter.Convert(ThemeSettings.Config.Direction, Enum.DirectionEnum.LTR));
+            _theme.SetDirection(Converter.Convert(ThemeSettings.Config.Direction, DirectionEnum.LTR));
         }
     }
 }

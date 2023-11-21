@@ -25,6 +25,8 @@ namespace Taiizor.Starterkit.Extension
 
         public string LayoutDir { get; set; }
 
+        public string IconsType { get; set; }
+
         public string PartialsDir { get; set; }
 
         public string ModeDefault { get; set; }

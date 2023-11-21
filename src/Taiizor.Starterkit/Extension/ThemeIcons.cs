@@ -2,9 +2,9 @@ using Microsoft.Extensions.Configuration;
 
 namespace Taiizor.Starterkit.Extension
 {
-    public class ThemeSettings
+    public class ThemeIcons
     {
-        public static ThemeBase Config = new();
+        public static SortedDictionary<string, int> Config { get; set; } = [];
 
         public static void Init(string Path, string Key)
         {
@@ -17,7 +17,7 @@ namespace Taiizor.Starterkit.Extension
 
         public static void Init(IConfiguration Configuration, string Key)
         {
-            Config = Configuration.GetSection(Key).Get<ThemeBase>() ?? Config;
+            Config = Configuration.GetSection(Key).Get<SortedDictionary<string, int>>() ?? Config;
         }
     }
 }
