@@ -96,6 +96,17 @@ namespace Taiizor.Starterkit.Extension
             return null;
         }
 
+        // Get variable from settings
+        public string GetVariable(string key)
+        {
+            if (ThemeVariables.Config.TryGetValue(key, out string value))
+            {
+                return value;
+            }
+
+            return string.Empty;
+        }
+
         // Get SVG icon content
         public string GetSvgIcon(string path, string classNames)
         {

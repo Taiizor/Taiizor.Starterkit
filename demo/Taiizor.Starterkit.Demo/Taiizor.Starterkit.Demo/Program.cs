@@ -10,6 +10,13 @@ namespace Taiizor.Starterkit.Demo
             WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
             // Set theme to the configuration
+            //IConfiguration variableConfiguration = new ConfigurationBuilder()
+            //    .AddJsonFile("DemoVariables.json")
+            //    .Build();
+
+            //ThemeSettings.Init(variableConfiguration, "Demo");
+
+            // Set theme to the configuration
             //IConfiguration themeConfiguration = new ConfigurationBuilder()
             //    .AddJsonFile("DemoSettings.json")
             //    .Build();
@@ -23,6 +30,7 @@ namespace Taiizor.Starterkit.Demo
 
             //ThemeIcons.Init(iconConfiguration, "Demo");
 
+            ThemeVariables.Init("DemoVariables.json", "Demo");
             ThemeSettings.Init("DemoSettings.json", "Demo");
             ThemeIcons.Init("DemoIcons.json", "Demo");
 

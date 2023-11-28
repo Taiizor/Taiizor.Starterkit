@@ -13,7 +13,7 @@
 
     <PropertyGroup>
         <ApplicationIcon>Resources\Taiizor.Starterkit.ico</ApplicationIcon>
-        <Version>1.1.3.2</Version>
+        <Version>1.1.3.3</Version>
         <AssemblyVersion>$(Version)</AssemblyVersion>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Title>Taiizor.Starterkit</Title>
@@ -76,7 +76,13 @@ Changes are detailed at https://github.com/Taiizor/Taiizor.Starterkit/releases
             <Pack>True</Pack>
             <PackagePath></PackagePath>
         </None>
+        <Content Update="Resources\FactoryVariables.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
         <Content Update="Resources\FactorySettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Update="Resources\FactoryIcons.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>

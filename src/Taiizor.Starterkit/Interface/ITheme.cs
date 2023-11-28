@@ -16,6 +16,8 @@ namespace Taiizor.Starterkit.Interface
 
         string PrintHtmlClasses(string scope);
 
+        string GetVariable(string key);
+
         string GetSvgIcon(string path, string classNames);
 
         string GetIcon(string iconName, string iconClass = "", string iconType = "");
