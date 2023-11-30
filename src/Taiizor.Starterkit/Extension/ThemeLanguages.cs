@@ -12,6 +12,8 @@ namespace Taiizor.Starterkit.Extension
 
         public string UnknownLang { get; set; }
 
+        public string CookieDomain { get; set; }
+
         public List<string> ActiveLang { get; set; }
 
         public Dictionary<string, Dictionary<string, string>> List { get; set; }

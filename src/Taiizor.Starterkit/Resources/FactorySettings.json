@@ -69,6 +69,7 @@
         },
         "Languages": {
             "DefaultFlag": "european-union",
+            "CookieDomain": ".vegalya.com",
             "CookieName": "Factorial",
             "UnknownName": "Unknown",
             "UnknownLang": "xy-XY",
