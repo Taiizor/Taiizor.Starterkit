@@ -152,6 +152,10 @@ namespace Taiizor.Starterkit.Interface
 
         string GetLangCookieName();
 
+        void SetLangCookieDomain(string flag);
+
+        string GetLangCookieDomain();
+
         bool IsLangLocale(string lang);
 
         bool IsLangLocaleDefault(string lang);

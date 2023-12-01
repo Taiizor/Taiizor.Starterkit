@@ -615,6 +615,18 @@ namespace Taiizor.Starterkit.Extension
             return ThemeSettings.Config.Languages.CookieName;
         }
 
+        // Set the languages cookie domain
+        public void SetLangCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Languages.CookieDomain = flag;
+        }
+
+        // Get the languages cookie domain
+        public string GetLangCookieDomain()
+        {
+            return ThemeSettings.Config.Languages.CookieDomain;
+        }
+
         // Check lang locale status
         public bool IsLangLocale(string lang)
         {
