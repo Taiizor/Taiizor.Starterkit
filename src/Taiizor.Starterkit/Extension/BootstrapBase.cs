@@ -24,7 +24,12 @@ namespace Taiizor.Starterkit.Extension
         public void InitLayout()
         {
             _theme.AddHtmlAttribute("body", "id", "kt_app_body");
-            _theme.AddHtmlAttribute("body", "data-kt-app-page-loading", "on");
+
+            if (_theme.GetPreloader())
+            {
+                _theme.AddHtmlAttribute("body", "data-kt-app-page-loading", "on");
+                _theme.AddHtmlAttribute("body", "data-kt-app-page-loading-enabled", "true");
+            }
         }
 
         // Init domain option from settings

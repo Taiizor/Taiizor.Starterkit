@@ -22,6 +22,10 @@ namespace Taiizor.Starterkit.Interface
 
         string GetIcon(string iconName, string iconClass = "", string iconType = "");
 
+        void SetPreloader(bool flag);
+
+        bool GetPreloader();
+
         void SetDomain(string flag);
 
         string GetDomain();
