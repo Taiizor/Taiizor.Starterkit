@@ -56,6 +56,11 @@
             "CookieExpires": 30,
             "SuppressX": false
         },
+        "Application": {
+            "CookieDomain": ".vegalya.com",
+            "CookieName": "Factorial",
+            "CookieExpires": 30
+        },
         "Compression": {
             "StaticFile": {
                 "CacheControl": "public, max-age={0}",

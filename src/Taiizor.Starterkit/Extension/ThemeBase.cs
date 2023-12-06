@@ -49,6 +49,8 @@ namespace Taiizor.Starterkit.Extension
 
         public ThemeAntiforgery Antiforgery { get; set; }
 
+        public ThemeApplication Application { get; set; }
+
         public ThemeCompression Compression { get; set; }
 
         public ThemeSocialMedia SocialMedia { get; set; }
