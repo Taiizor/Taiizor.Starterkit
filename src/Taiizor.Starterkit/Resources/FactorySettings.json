@@ -38,10 +38,14 @@
             "CookieExpires": 30
         },
         "Authenticator": {
+            "ProviderDisplay": "Vegalya LLC",
             "CookieDomain": ".vegalya.com",
+            "ProviderName": "Vegalya",
             "CookieName": "Factorial",
             "CookieValueLength": 90,
+            "ProviderKeyLength": 36,
             "CookieValueSplit": "-",
+            "ProviderKeySplit": "-",
             "CookieExpires": 30
         },
         "Antiforgery": {
