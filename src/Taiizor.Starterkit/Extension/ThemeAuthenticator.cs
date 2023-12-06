@@ -10,6 +10,6 @@ namespace Taiizor.Starterkit.Extension
 
         public int CookieValueLength { get; set; }
 
-        public string CookieValueSeperator { get; set; }
+        public string CookieValueSplit { get; set; }
     }
 }
