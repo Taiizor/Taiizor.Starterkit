@@ -166,6 +166,18 @@ namespace Taiizor.Starterkit.Interface
 
         bool IsLangActiveLang(string lang);
 
+        void SetAuthenticationCookieDomain(string flag);
+
+        string GetAuthenticationCookieDomain();
+
+        void SetAuthenticatorCookieDomain(string flag);
+
+        string GetAuthenticatorCookieDomain();
+
+        void SetAntiforgeryCookieDomain(string flag);
+
+        string GetAntiforgeryCookieDomain();
+
         string GetManifest();
 
         string GetFavicon();

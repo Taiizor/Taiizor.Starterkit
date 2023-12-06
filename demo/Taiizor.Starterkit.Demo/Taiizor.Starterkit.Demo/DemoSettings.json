@@ -32,6 +32,26 @@
                 "Line": "<a href='https://github.com/Taiizor'><img src='github.svg' alt='GitHub Address' /></a>"
             }
         },
+        "Authentication": {
+            "CookieDomain": ".vegalya.com",
+            "CookieName": "Factorial",
+            "CookieExpires": 30
+        },
+        "Authenticator": {
+            "CookieDomain": ".vegalya.com",
+            "CookieName": "Factorial",
+            "CookieValueLength": 90,
+            "CookieValueSplit": "-",
+            "CookieExpires": 30
+        },
+        "Antiforgery": {
+            "FormFieldName": "FormFieldName",
+            "CookieDomain": ".vegalya.com",
+            "HeaderName": "HeaderName",
+            "CookieName": "Factorial",
+            "CookieExpires": 30,
+            "SuppressX": false
+        },
         "Compression": {
             "StaticFile": {
                 "CacheControl": "public, max-age={0}",

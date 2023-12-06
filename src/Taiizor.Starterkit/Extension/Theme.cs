@@ -669,6 +669,42 @@ namespace Taiizor.Starterkit.Extension
             return false;
         }
 
+        // Set the authentication cookie domain
+        public void SetAuthenticationCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Authentication.CookieDomain = flag;
+        }
+
+        // Get the authentication cookie domain
+        public string GetAuthenticationCookieDomain()
+        {
+            return ThemeSettings.Config.Authentication.CookieDomain;
+        }
+
+        // Set the authenticator cookie domain
+        public void SetAuthenticatorCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Authenticator.CookieDomain = flag;
+        }
+
+        // Get the authenticator cookie domain
+        public string GetAuthenticatorCookieDomain()
+        {
+            return ThemeSettings.Config.Authenticator.CookieDomain;
+        }
+
+        // Set the antiforgery cookie domain
+        public void SetAntiforgeryCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Antiforgery.CookieDomain = flag;
+        }
+
+        // Get the antiforgery cookie domain
+        public string GetAntiforgeryCookieDomain()
+        {
+            return ThemeSettings.Config.Antiforgery.CookieDomain;
+        }
+
         // Include favicon from settings
         public string GetManifest()
         {

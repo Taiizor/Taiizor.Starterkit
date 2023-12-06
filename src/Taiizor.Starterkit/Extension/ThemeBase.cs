@@ -47,9 +47,15 @@ namespace Taiizor.Starterkit.Extension
 
         public ThemeThirdParty ThirdParty { get; set; }
 
+        public ThemeAntiforgery Antiforgery { get; set; }
+
         public ThemeCompression Compression { get; set; }
 
         public ThemeSocialMedia SocialMedia { get; set; }
+
+        public ThemeAuthenticator Authenticator { get; set; }
+
+        public ThemeAuthentication Authentication { get; set; }
 
         public Dictionary<string, ThemeVendors> Vendors { get; set; }
     }
