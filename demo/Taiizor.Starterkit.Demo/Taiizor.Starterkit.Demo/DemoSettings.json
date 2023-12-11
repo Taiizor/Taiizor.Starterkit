@@ -9,6 +9,7 @@
         "ModeSwitchEnabled": true,
         "LocaleDefault": "en-GB",
         "SvgDir": "media/icons/",
+        "DevelopmentMode": true,
         "ModeDefault": "system",
         "AssetsDir": "assets/",
         "PagesDir": "~/Pages",
@@ -57,6 +58,11 @@
             "SuppressX": false
         },
         "Application": {
+            "CookieDomain": ".vegalya.com",
+            "CookieName": "Factorial",
+            "CookieExpires": 30
+        },
+        "TempData": {
             "CookieDomain": ".vegalya.com",
             "CookieName": "Factorial",
             "CookieExpires": 30

@@ -35,6 +35,10 @@ namespace Taiizor.Starterkit.Extension
 
         public string LocaleDefault { get; set; }
 
+        public bool DevelopmentMode { get; set; }
+
+        public ThemeTempData TempData { get; set; }
+
         public bool ModeSwitchEnabled { get; set; }
 
         public string MapFallbackPage { get; set; }

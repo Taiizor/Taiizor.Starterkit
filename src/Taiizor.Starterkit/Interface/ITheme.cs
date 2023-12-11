@@ -22,6 +22,10 @@ namespace Taiizor.Starterkit.Interface
 
         string GetIcon(string iconName, string iconClass = "", string iconType = "");
 
+        void SetDevelopmentMode(bool flag);
+
+        bool GetDevelopmentMode();
+
         void SetPreloader(bool flag);
 
         bool GetPreloader();
@@ -177,6 +181,10 @@ namespace Taiizor.Starterkit.Interface
         void SetAntiforgeryCookieDomain(string flag);
 
         string GetAntiforgeryCookieDomain();
+
+        void SetTempDataCookieDomain(string flag);
+
+        string GetTempDataCookieDomain();
 
         string GetManifest();
 

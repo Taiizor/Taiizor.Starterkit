@@ -159,6 +159,18 @@ namespace Taiizor.Starterkit.Extension
             return output;
         }
 
+        // Set development mode from settings
+        public void SetDevelopmentMode(bool flag)
+        {
+            ThemeSettings.Config.DevelopmentMode = flag;
+        }
+
+        // Get development mode from settings
+        public bool GetDevelopmentMode()
+        {
+            return ThemeSettings.Config.DevelopmentMode;
+        }
+
         // Set preloader option from settings
         public void SetPreloader(bool flag)
         {
@@ -315,13 +327,13 @@ namespace Taiizor.Starterkit.Extension
             return _localeDefault.Replace("-", "_");
         }
 
-        // Set dark mode enabled status
+        // Set mode enabled status
         public void SetModeSwitch(bool flag)
         {
             _modeSwitchEnabled = flag;
         }
 
-        // Check dark mode status
+        // Check mode status
         public bool IsModeSwitchEnabled()
         {
             return _modeSwitchEnabled;
@@ -703,6 +715,18 @@ namespace Taiizor.Starterkit.Extension
         public string GetAntiforgeryCookieDomain()
         {
             return ThemeSettings.Config.Antiforgery.CookieDomain;
+        }
+
+        // Set the tempdata cookie domain
+        public void SetTempDataCookieDomain(string flag)
+        {
+            ThemeSettings.Config.TempData.CookieDomain = flag;
+        }
+
+        // Get the tempdata cookie domain
+        public string GetTempDataCookieDomain()
+        {
+            return ThemeSettings.Config.TempData.CookieDomain;
         }
 
         // Include favicon from settings
