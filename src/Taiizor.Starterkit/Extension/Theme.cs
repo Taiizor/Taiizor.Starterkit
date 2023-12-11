@@ -717,6 +717,18 @@ namespace Taiizor.Starterkit.Extension
             return ThemeSettings.Config.Antiforgery.CookieDomain;
         }
 
+        // Set the application cookie domain
+        public void SetApplicationCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Application.CookieDomain = flag;
+        }
+
+        // Get the application cookie domain
+        public string GetApplicationCookieDomain()
+        {
+            return ThemeSettings.Config.Application.CookieDomain;
+        }
+
         // Set the tempdata cookie domain
         public void SetTempDataCookieDomain(string flag)
         {

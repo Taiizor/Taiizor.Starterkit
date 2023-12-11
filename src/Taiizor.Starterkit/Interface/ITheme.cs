@@ -182,6 +182,10 @@ namespace Taiizor.Starterkit.Interface
 
         string GetAntiforgeryCookieDomain();
 
+        void SetApplicationCookieDomain(string flag);
+
+        string GetApplicationCookieDomain();
+
         void SetTempDataCookieDomain(string flag);
 
         string GetTempDataCookieDomain();
