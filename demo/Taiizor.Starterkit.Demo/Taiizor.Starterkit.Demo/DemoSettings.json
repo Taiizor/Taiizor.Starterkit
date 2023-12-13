@@ -34,6 +34,16 @@
             }
         },
         "Authentication": {
+            "TwoFactorRemember": {
+                "CookieDomain": ".vegalya.com",
+                "CookieName": "Factorial",
+                "CookieExpires": 30
+            },
+            "TwoFactorUserId": {
+                "CookieDomain": ".vegalya.com",
+                "CookieName": "Factorial",
+                "CookieExpires": 30
+            },
             "CookieDomain": ".vegalya.com",
             "CookieName": "Factorial",
             "CookieExpires": 30

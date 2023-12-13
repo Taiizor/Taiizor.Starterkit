@@ -681,6 +681,30 @@ namespace Taiizor.Starterkit.Extension
             return false;
         }
 
+        // Set the authentication two factor remember cookie domain
+        public void SetTwoFactorRememberCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Authentication.TwoFactorRemember.CookieDomain = flag;
+        }
+
+        // Get the authentication two factor remember cookie domain
+        public string GetTwoFactorRememberCookieDomain()
+        {
+            return ThemeSettings.Config.Authentication.TwoFactorRemember.CookieDomain;
+        }
+
+        // Set the authentication two factor user id cookie domain
+        public void SetTwoFactorUserIdCookieDomain(string flag)
+        {
+            ThemeSettings.Config.Authentication.TwoFactorUserId.CookieDomain = flag;
+        }
+
+        // Get the authentication two factor user id cookie domain
+        public string GetTwoFactorUserIdCookieDomain()
+        {
+            return ThemeSettings.Config.Authentication.TwoFactorUserId.CookieDomain;
+        }
+
         // Set the authentication cookie domain
         public void SetAuthenticationCookieDomain(string flag)
         {

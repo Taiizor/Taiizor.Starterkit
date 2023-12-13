@@ -170,6 +170,14 @@ namespace Taiizor.Starterkit.Interface
 
         bool IsLangActiveLang(string lang);
 
+        void SetTwoFactorRememberCookieDomain(string flag);
+
+        string GetTwoFactorRememberCookieDomain();
+
+        void SetTwoFactorUserIdCookieDomain(string flag);
+
+        string GetTwoFactorUserIdCookieDomain();
+
         void SetAuthenticationCookieDomain(string flag);
 
         string GetAuthenticationCookieDomain();

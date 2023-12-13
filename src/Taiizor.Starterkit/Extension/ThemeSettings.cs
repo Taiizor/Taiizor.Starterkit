@@ -29,6 +29,8 @@ namespace Taiizor.Starterkit.Extension
                 Config.Antiforgery.CookieDomain = "localhost";
                 Config.Authenticator.CookieDomain = "localhost";
                 Config.Authentication.CookieDomain = "localhost";
+                Config.Authentication.TwoFactorUserId.CookieDomain = "localhost";
+                Config.Authentication.TwoFactorRemember.CookieDomain = "localhost";
             }
         }
     }
