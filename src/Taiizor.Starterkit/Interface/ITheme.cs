@@ -86,6 +86,8 @@ namespace Taiizor.Starterkit.Interface
 
         DirectionEnum GetDirection();
 
+        bool IsLtrDirection();
+
         bool IsRtlDirection();
 
         string GetAssetPath(string path);

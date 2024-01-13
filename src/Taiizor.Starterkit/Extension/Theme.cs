@@ -363,6 +363,12 @@ namespace Taiizor.Starterkit.Extension
             return _direction;
         }
 
+        // Check if style direction is LTR
+        public bool IsLtrDirection()
+        {
+            return _direction == DirectionEnum.LTR;
+        }
+
         // Check if style direction is RTL
         public bool IsRtlDirection()
         {
@@ -393,12 +399,22 @@ namespace Taiizor.Starterkit.Extension
             return $"{ThemeSettings.Config.PagesDir}/{path}";
         }
 
-        // Extend CSS file name with RTL
+        // Extend CSS file name with RTL or LTR
         public string ExtendCssFilename(string path)
         {
             if (IsRtlDirection())
             {
-                path = path.Replace(".css", ".rtl.css");
+                if (!path.EndsWith(".rtl.css"))
+                {
+                    path = path.Replace(".css", ".rtl.css");
+                }
+            }
+            else if (IsLtrDirection())
+            {
+                if (path.EndsWith(".rtl.css"))
+                {
+                    path = path.Replace(".rtl.css", ".css");
+                }
             }
 
             return path;
@@ -821,10 +837,10 @@ namespace Taiizor.Starterkit.Extension
                     switch (type)
                     {
                         case TypeEnum.Js:
-                            newList.Add(GetAssetPath(file));
+                            newList.Add(file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file));
                             break;
                         case TypeEnum.Css:
-                            newList.Add(GetAssetPath(ExtendCssFilename(file)));
+                            newList.Add(file.Contains("https://") || file.Contains("http://") ? ExtendCssFilename(file) : GetAssetPath(ExtendCssFilename(file)));
                             break;
                         case TypeEnum.Font:
                             newList.Add(file.Contains("https://") || file.Contains("http://") ? file : GetAssetPath(file));
