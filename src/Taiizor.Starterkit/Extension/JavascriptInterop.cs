@@ -1,4 +1,5 @@
 using Microsoft.JSInterop;
+using System.Reflection;
 using Taiizor.Starterkit.Interface;
 
 namespace Taiizor.Starterkit.Extension
@@ -61,11 +62,19 @@ namespace Taiizor.Starterkit.Extension
 
         public async ValueTask DisposeAsync()
         {
-            if (moduler.IsValueCreated)
+            try
             {
-                IJSObjectReference module = await GetModuleAsync();
-                await module.DisposeAsync();
+                if (moduler.IsValueCreated)
+                {
+                    IJSObjectReference module = await GetModuleAsync();
+
+                    if (module != null)
+                    {
+                        await module.DisposeAsync();
+                    }
+                }
             }
+            catch { }
         }
     }
 }
