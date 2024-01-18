@@ -7,11 +7,12 @@ namespace Taiizor.Starterkit.Extension
     {
         private readonly IJSRuntime js;
         private readonly string module;
+        private readonly string cache = $"?v={Guid.NewGuid()}";
         private readonly Lazy<Task<IJSObjectReference>> moduler;
 
-        public JavascriptInterop()
+        public JavascriptInterop(Guid cache)
         {
-            //
+            this.cache = $"?v={cache}";
         }
 
         public JavascriptInterop(IJSRuntime js = null)
@@ -23,16 +24,16 @@ namespace Taiizor.Starterkit.Extension
         {
             this.js = js;
             this.module = module;
-            this.moduler = new(() => js.InvokeAsync<IJSObjectReference>("import", module).AsTask());
+            this.moduler = new(() => js.InvokeAsync<IJSObjectReference>("import", module + cache).AsTask());
         }
 
         public JavascriptInterop(IJSRuntime js = null, string module = null, params string[] identifiers)
         {
             this.js = js;
             this.module = module;
-            this.moduler = new(() => js.InvokeAsync<IJSObjectReference>("import", module).AsTask());
+            this.moduler = new(() => js.InvokeAsync<IJSObjectReference>("import", module + cache).AsTask());
 
-            InitializeIdentifiers(identifiers);
+            _ = InitializeIdentifiersAsync(identifiers);
         }
 
         public async ValueTask<T> InvokeAsync<T>(string identifier, params object[] args)
@@ -47,20 +48,20 @@ namespace Taiizor.Starterkit.Extension
             await module.InvokeVoidAsync(identifier, args);
         }
 
-        private async ValueTask<IJSObjectReference> GetModuleAsync()
-        {
-            return await moduler.Value;
-        }
-
-        private void InitializeIdentifiers(string[] identifiers)
+        private async ValueTask InitializeIdentifiersAsync(string[] identifiers)
         {
             if (identifiers != null && identifiers.Any())
             {
                 foreach (string identifier in identifiers)
                 {
-                    _ = InvokeVoidAsync(identifier);
+                    await InvokeVoidAsync(identifier);
                 }
             }
+        }
+
+        private async ValueTask<IJSObjectReference> GetModuleAsync()
+        {
+            return await moduler.Value;
         }
 
         public async ValueTask DisposeAsync()
