@@ -3,7 +3,7 @@ using Taiizor.Starterkit.Interface;
 
 namespace Taiizor.Starterkit.Extension
 {
-    public class JavascriptInterop(IJSRuntime js, string module) : IJavascriptInterop
+    public class JavascriptInterop(IJSRuntime js = null, string module = null) : IJavascriptInterop
     {
         private readonly Lazy<Task<IJSObjectReference>> Moduler = new(() => js.InvokeAsync<IJSObjectReference>("import", module).AsTask());
 
