@@ -8,7 +8,7 @@ namespace Taiizor.Starterkit.Extension
         private readonly IJSRuntime js;
         private readonly string module;
         private readonly Lazy<Task<IJSObjectReference>> moduler;
-        private readonly string cache = $"?v={ThemeSettings.Config.Guid}";
+        private readonly string cache = ThemeSettings.Config.Assets.Version ? $"?v={ThemeSettings.Config.Guid}" : string.Empty;
 
         public JavascriptInterop(IJSRuntime js = null)
         {
