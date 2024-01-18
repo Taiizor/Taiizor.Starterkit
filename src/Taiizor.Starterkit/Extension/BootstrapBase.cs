@@ -56,14 +56,17 @@ namespace Taiizor.Starterkit.Extension
         // Global theme initializer
         public void Init(ITheme theme)
         {
-            _theme = theme;
+            if (_theme == null)
+            {
+                _theme = theme;
 
-            InitLocaleMode();
-            InitThemeMode();
-            InitThemeDirection();
-            InitRtl();
-            InitLayout();
-            InitDomain();
+                InitLocaleMode();
+                InitThemeMode();
+                InitThemeDirection();
+                InitRtl();
+                InitLayout();
+                InitDomain();
+            }
         }
 
         // Init theme direction option (RTL or LTR) from settings

@@ -7,13 +7,8 @@ namespace Taiizor.Starterkit.Extension
     {
         private readonly IJSRuntime js;
         private readonly string module;
-        private readonly string cache = $"?v={Guid.NewGuid()}";
         private readonly Lazy<Task<IJSObjectReference>> moduler;
-
-        public JavascriptInterop(Guid cache)
-        {
-            this.cache = $"?v={cache}";
-        }
+        private readonly string cache = $"?v={ThemeSettings.Config.Guid}";
 
         public JavascriptInterop(IJSRuntime js = null)
         {

@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Taiizor.Starterkit" Version="1.1.5.3" />
+    <PackageReference Include="Taiizor.Starterkit" Version="1.1.5.4" />
   </ItemGroup>
 
 </Project>

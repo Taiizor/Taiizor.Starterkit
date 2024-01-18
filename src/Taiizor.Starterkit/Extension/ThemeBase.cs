@@ -3,6 +3,8 @@ namespace Taiizor.Starterkit.Extension
     // Base type class for theme settings
     public class ThemeBase
     {
+        public Guid Guid { get; set; }
+
         public int Major { get; set; }
 
         public int Minor { get; set; }

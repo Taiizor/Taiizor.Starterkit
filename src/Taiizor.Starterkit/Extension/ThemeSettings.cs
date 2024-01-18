@@ -19,6 +19,8 @@ namespace Taiizor.Starterkit.Extension
         {
             Config = Configuration.GetSection(Key).Get<ThemeBase>() ?? Config;
 
+            Config.Guid = Guid.NewGuid();
+
             if (Config.DevelopmentMode)
             {
                 Config.Domain = "https://localhost/";
