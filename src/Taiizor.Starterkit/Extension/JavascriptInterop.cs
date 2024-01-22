@@ -1,5 +1,5 @@
+using Microsoft.Extensions.Localization;
 using Microsoft.JSInterop;
-using System.Reflection;
 using Taiizor.Starterkit.Interface;
 
 namespace Taiizor.Starterkit.Extension
@@ -35,13 +35,13 @@ namespace Taiizor.Starterkit.Extension
         public async ValueTask<T> InvokeAsync<T>(string identifier, params object[] args)
         {
             IJSObjectReference module = await GetModuleAsync();
-            return await module.InvokeAsync<T>(identifier, args);
+            return await module.InvokeAsync<T>(identifier, TransformLocalizationArgs(args));
         }
 
         public async ValueTask InvokeVoidAsync(string identifier, params object[] args)
         {
             IJSObjectReference module = await GetModuleAsync();
-            await module.InvokeVoidAsync(identifier, args);
+            await module.InvokeVoidAsync(identifier, TransformLocalizationArgs(args));
         }
 
         private async ValueTask InitializeIdentifiersAsync(string[] identifiers)
@@ -58,6 +58,29 @@ namespace Taiizor.Starterkit.Extension
         private async ValueTask<IJSObjectReference> GetModuleAsync()
         {
             return await moduler.Value;
+        }
+
+        private object[] TransformLocalizationArgs(object[] args)
+        {
+            if (args.Any())
+            {
+                for (int i = 0; i < args.Length; i++)
+                {
+                    if (args[i] is LocalizedString localizedString)
+                    {
+                        if (localizedString.ResourceNotFound)
+                        {
+                            args[i] = $"[{localizedString.Name}]";
+                        }
+                        else
+                        {
+                            args[i] = localizedString.Value;
+                        }
+                    }
+                }
+            }
+
+            return args;
         }
 
         public async ValueTask DisposeAsync()
